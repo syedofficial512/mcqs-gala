@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MCQs Gala</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Modern Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Import jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- Background Elements -->
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+
+        <!-- Intro Screen -->
+        <div id="intro-screen" class="screen active">
+            <div class="glass-card intro-content">
+                <div class="logo-container">
+                    <!-- Logo with class -->
+                    <img src="logo.png" alt="MCQs Gala Logo" class="intro-logo">
+                </div>
+                <h1 class="title-anim">MCQs GALA</h1>
+                <p class="subtitle-anim">Academic Excellence</p>
+                <button id="start-btn" class="btn-primary glow-effect">Enter Arena <span class="arrow">→</span></button>
+            </div>
+        </div>
+
+        <!-- Registration Screen -->
+        <div id="reg-screen" class="screen hidden">
+            <div class="glass-card" style="max-width: 500px;">
+                <h2 style="margin-bottom: 20px;">Cadet Registration</h2>
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" id="reg-name" class="form-input" placeholder="Enter your name">
+                </div>
+                <p id="reg-error" class="error-msg">Please fill all fields</p>
+                <button id="proceed-btn" class="btn-primary" style="width:100%">Proceed <span class="arrow">→</span></button>
+            </div>
+        </div>
+
+        <!-- Menu Screen -->
+        <div id="menu-screen" class="screen hidden">
+            <header class="app-header">
+                <h2>Select Subject</h2>
+                <p>Choose your battlefield</p>
+            </header>
+            <div class="menu-grid">
+                <button class="menu-card physics" onclick="selectSubject('physics')">
+                    <div class="icon-box">⚛️</div>
+                    <div class="card-text">
+                        <h3>Physics</h3>
+                        <p>Understanding Universe</p>
+                    </div>
+                </button>
+                <button class="menu-card computer" onclick="selectSubject('computer')">
+                    <div class="icon-box">💻</div>
+                    <div class="card-text">
+                        <h3>Computer</h3>
+                        <p>Tech & Code</p>
+                    </div>
+                </button>
+                <button class="menu-card chemistry" onclick="selectSubject('chemistry')">
+                    <div class="icon-box">🧪</div>
+                    <div class="card-text">
+                        <h3>Chemistry</h3>
+                        <p>Reactions & Matter</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mode Screen -->
+        <div id="mode-screen" class="screen hidden">
+            <header class="app-header">
+                <h2>Select Mode</h2>
+                <p>Choose your path</p>
+            </header>
+            <div class="menu-grid">
+                <button class="menu-card" onclick="selectMode('practice')">
+                    <div class="icon-box">📖</div>
+                    <div class="card-text"><h3>Practice</h3><p>Learn & Review</p></div>
+                </button>
+                <button class="menu-card" onclick="selectMode('test')">
+                    <div class="icon-box">📝</div>
+                    <div class="card-text"><h3>Test</h3><p>Challenge Yourself</p></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Chapter Screen -->
+        <div id="chapter-screen" class="screen hidden">
+            <header class="app-header">
+                <h2>Select Chapter</h2>
+                <p>Focus your study</p>
+            </header>
+            <div class="menu-grid">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+
+        <!-- Mixed Setup Screen -->
+        <div id="mixed-setup-screen" class="screen hidden">
+            <div class="glass-card" style="max-width: 500px;">
+                <h2 style="margin-bottom: 20px;">Mixed Battle Setup</h2>
+                <p style="color:var(--text-muted); margin-bottom:20px;">Total Available: <span id="total-mixed-count">0</span></p>
+                
+                <div class="form-group">
+                    <label class="form-label">Number of Questions</label>
+                    <input type="number" id="mixed-count-input" class="form-input" placeholder="Enter amount (e.g. 50)">
+                </div>
+                
+                <div style="display:flex; gap:10px; flex-direction:column;">
+                    <button id="btn-start-mixed-custom" class="btn-primary" style="width:100%">Start Custom</button>
+                    <button id="btn-start-multi-chapter" class="btn-primary" style="width:100%">Start Specific Chapters</button>
+                    <button id="btn-start-mixed-all" class="btn-secondary" style="width:100%">Play All MCQs</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multi Chapter Selection Screen -->
+        <div id="multi-chapter-screen" class="screen hidden">
+            <header class="app-header">
+                <h2>Select Chapters</h2>
+                <p>Pick at least 2 units</p>
+            </header>
+            <div class="menu-grid" id="multi-chapter-grid">
+                <!-- Injected via JS -->
+            </div>
+            <div style="margin-top: 20px; width: 100%; max-width: 500px;">
+                <button id="btn-confirm-multi" class="btn-primary" style="width:100%">Start Battle <span class="arrow">→</span></button>
+            </div>
+        </div>
+
+        <!-- Timer Options Screen -->
+        <div id="timer-screen" class="screen hidden">
+            <div class="glass-card" style="max-width: 500px;">
+                <h2 style="margin-bottom: 20px;">Timer Options</h2>
+                <div class="form-group">
+                    <div class="radio-group" style="flex-direction: column;">
+                        <label class="radio-label">
+                            <input type="radio" name="timerType" value="normal" class="radio-input" checked onchange="toggleTimerInput()">
+                            <div class="radio-card" style="justify-content: space-between;">
+                                <span>⏱️ Normal Timer</span>
+                                <span style="font-size: 0.8rem; opacity: 0.7;">Track your speed</span>
+                            </div>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="timerType" value="goal" class="radio-input" onchange="toggleTimerInput()">
+                            <div class="radio-card" style="justify-content: space-between;">
+                                <span>🎯 Set a Goal</span>
+                                <span style="font-size: 0.8rem; opacity: 0.7;">Race against clock</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div id="goal-input-box" class="timer-input-container">
+                        <label class="form-label" style="margin-top: 10px;">Minutes (Max 100)</label>
+                        <input type="number" id="goal-minutes" class="form-input" placeholder="e.g. 10" min="1" max="100">
+                    </div>
+                </div>
+                <button id="start-battle-btn" class="btn-primary" style="width:100%">Start Battle <span class="arrow">→</span></button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen hidden">
+            <div class="quiz-wrapper">
+                <header class="quiz-header">
+                    <div class="header-top">
+                        <span id="subject-tag" class="badge">Subject</span>
+                        <div class="center-info">
+                            <span id="streak-display" class="badge streak-badge hidden">STREAK: 0</span>
+                            <span id="timer-display" class="badge" style="background: rgba(255, 255, 255, 0.1); color: var(--text-main);">00:00</span>
+                        </div>
+                        <span id="question-counter" class="counter">1 / 50</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </header>
+                
+                <div class="question-card">
+                    <h2 id="question-text">Loading Question...</h2>
+                </div>
+
+                <div class="options-grid" id="options-container">
+                    <!-- Options injected by JS -->
+                </div>
+
+                <div class="quiz-footer">
+                    <button id="prev-btn" class="btn-secondary" style="margin-right: 10px; display: none;">Previous</button>
+                    <button id="next-btn" class="btn-secondary" disabled>Next Question</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen hidden">
+            <div class="glass-card result-card">
+                <h2>Mission Complete</h2>
+                <p id="result-user-name" style="color: var(--primary); font-weight: 600; margin-top: -10px; margin-bottom: 15px;"></p>
+                <div class="score-circle-container">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-ring__circle" stroke="var(--primary)" stroke-width="6" fill="transparent" r="52" cx="60" cy="60"/>
+                    </svg>
+                    <div class="score-text">
+                        <span id="final-score">0</span>
+                        <small id="total-q">/ 50</small>
+                    </div>
+                </div>
+                <p id="result-message" class="result-msg">Result Pending</p>
+                <p id="result-time" style="color: var(--text-muted); margin-bottom: 20px;">Time Taken: 00:00</p>
+                <p id="result-streak" class="result-streak hidden">Highest Streak: 0 🔥</p>
+                
+                <div class="action-buttons">
+                    <button onclick="downloadPDF()" class="btn-primary icon-btn">
+                        <span>Download PDF</span> 📥
+                    </button>
+                    <button id="btn-retry-test" class="btn-primary icon-btn" style="display:none;">
+                        <span>Take Test</span> 📝
+                    </button>
+                    <button onclick="location.reload()" class="btn-secondary icon-btn">
+                        <span>Home</span> 🏠
+                    </button>
+                </div>
+
+                <div class="review-section">
+                    <h3>Performance Review</h3>
+                    <div id="review-list" class="review-list">
+                        <!-- Review items injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="credits">Designed By <span>Syed Qammar Ali</span></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
