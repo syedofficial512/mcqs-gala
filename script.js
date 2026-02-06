@@ -539,6 +539,14 @@ let quizTimerInterval;
 let finalTimeStr = '00:00';
 let currentStreak = 0;
 let highestStreak = 0;
+let isMultiSubjectMode = false;
+let selectedMultiSubjects = [];
+let multiSubjectSettings = {
+    type: '', // 'count', 'all', 'specific'
+    count: 0
+};
+let multiSubjectFilter = {}; // { physics: ['unit1', 'unit2'], ... }
+let modalCallback = null; // Callback for modal confirmation
 
 // --- DOM ELEMENTS ---
 const introScreen = document.getElementById('intro-screen');
@@ -551,6 +559,10 @@ const multiChapterScreen = document.getElementById('multi-chapter-screen');
 const timerScreen = document.getElementById('timer-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const resultScreen = document.getElementById('result-screen');
+const multiSubSelectScreen = document.getElementById('multi-sub-select-screen');
+const multiSubOptionsScreen = document.getElementById('multi-sub-options-screen');
+const multiSubFilterScreen = document.getElementById('multi-sub-filter-screen');
+const confirmationModal = document.getElementById('confirmation-modal');
 
 const startBtn = document.getElementById('start-btn');
 const proceedBtn = document.getElementById('proceed-btn');
@@ -582,6 +594,15 @@ const btnStartMixedAll = document.getElementById('btn-start-mixed-all');
 const btnRetryTest = document.getElementById('btn-retry-test');
 const streakDisplay = document.getElementById('streak-display');
 const resultStreak = document.getElementById('result-streak');
+const btnMultiSubNext = document.getElementById('btn-multi-sub-next');
+const btnMultiStartCount = document.getElementById('btn-multi-start-count');
+const btnMultiSpecific = document.getElementById('btn-multi-specific');
+const btnMultiPlayAll = document.getElementById('btn-multi-play-all');
+const btnMultiBattleStart = document.getElementById('btn-multi-battle-start');
+const btnModalYes = document.getElementById('btn-modal-yes');
+const btnModalNo = document.getElementById('btn-modal-no');
+const modalTitle = document.getElementById('modal-title');
+const modalMsg = document.getElementById('modal-msg');
 
 // --- EVENT LISTENERS ---
 startBtn.addEventListener('click', () => {
@@ -650,6 +671,61 @@ btnConfirmMulti.addEventListener('click', () => {
     selectedChapter = 'multi';
     timerSettings.mixedCount = 0; // Use all questions from selected chapters
     switchScreen(multiChapterScreen, timerScreen);
+});
+
+btnMultiSubNext.addEventListener('click', () => {
+    if (selectedMultiSubjects.length < 2) {
+        alert("Please select at least 2 subjects.");
+        return;
+    }
+    switchScreen(multiSubSelectScreen, multiSubOptionsScreen);
+});
+
+btnMultiStartCount.addEventListener('click', () => {
+    const count = parseInt(document.getElementById('multi-count-input').value);
+    if (isNaN(count) || count <= 0) {
+        alert("Please enter a valid number.");
+        return;
+    }
+    multiSubjectSettings.type = 'count';
+    multiSubjectSettings.count = count;
+    showModal("Filter Chapters?", "Do you want to remove some chapters from the selection?", () => {
+        renderMultiSubjectFilter(true); // true = start checked (remove mode)
+        switchScreen(multiSubOptionsScreen, multiSubFilterScreen);
+    }, () => prepareMultiSubjectQuiz(true));
+});
+
+btnMultiPlayAll.addEventListener('click', () => {
+    multiSubjectSettings.type = 'all';
+    showModal("Filter Chapters?", "Do you want to remove some chapters from the selection?", () => {
+        renderMultiSubjectFilter(true); // true = start checked (remove mode)
+        switchScreen(multiSubOptionsScreen, multiSubFilterScreen);
+    }, () => prepareMultiSubjectQuiz(true));
+});
+
+btnMultiSpecific.addEventListener('click', () => {
+    multiSubjectSettings.type = 'specific';
+    // For specific, we go directly to filter screen, initially UNCHECKED or CHECKED?
+    // "Specific" implies picking what you want. Let's show filter screen.
+    renderMultiSubjectFilter(false); // false = start unchecked (or true? usually specific means pick a few. Let's start unchecked)
+    // Actually, let's start unchecked so user picks.
+    switchScreen(multiSubOptionsScreen, multiSubFilterScreen);
+});
+
+btnModalYes.addEventListener('click', () => {
+    confirmationModal.classList.remove('active');
+    if (modalCallback) modalCallback(true);
+});
+
+btnModalNo.addEventListener('click', () => {
+    confirmationModal.classList.remove('active');
+    if (modalCallback) modalCallback(false);
+});
+
+btnMultiBattleStart.addEventListener('click', () => {
+    // Gather selected chapters from filter screen
+    gatherMultiSubjectFilter();
+    prepareMultiSubjectQuiz(false); // false = use filter
 });
 
 // --- FUNCTIONS ---
@@ -725,8 +801,15 @@ function updateTimer() {
 }
 
 function selectSubject(mode) {
-    selectedSubjectMode = mode;
-    switchScreen(menuScreen, modeScreen);
+    if (mode === 'multi') {
+        isMultiSubjectMode = true;
+        renderMultiSubjectSelection();
+        switchScreen(menuScreen, multiSubSelectScreen);
+    } else {
+        isMultiSubjectMode = false;
+        selectedSubjectMode = mode;
+        switchScreen(menuScreen, modeScreen);
+    }
 }
 
 function selectMode(mode) {
@@ -837,6 +920,125 @@ function renderMultiChapterSelection() {
     });
 }
 
+function renderMultiSubjectSelection() {
+    const grid = document.getElementById('multi-sub-grid');
+    grid.innerHTML = '';
+    selectedMultiSubjects = [];
+    
+    const subjects = ['physics', 'computer', 'chemistry'];
+    const icons = { physics: '⚛️', computer: '💻', chemistry: '🧪' };
+    const titles = { physics: 'Physics', computer: 'Computer', chemistry: 'Chemistry' };
+    
+    subjects.forEach(sub => {
+        const btn = document.createElement('button');
+        btn.className = 'menu-card';
+        btn.innerHTML = `
+            <div class="icon-box">${icons[sub]}</div>
+            <div class="card-text"><h3>${titles[sub]}</h3></div>
+        `;
+        btn.onclick = () => {
+            btn.classList.toggle('selected');
+            if (selectedMultiSubjects.includes(sub)) {
+                selectedMultiSubjects = selectedMultiSubjects.filter(s => s !== sub);
+            } else {
+                selectedMultiSubjects.push(sub);
+            }
+        };
+        grid.appendChild(btn);
+    });
+}
+
+function showModal(title, msg, onYes, onNo = null) {
+    modalTitle.textContent = title;
+    modalMsg.textContent = msg;
+    confirmationModal.classList.add('active');
+    modalCallback = (result) => {
+        if (result) {
+            if (onYes) onYes();
+        } else {
+            if (onNo) onNo();
+        }
+    };
+}
+
+function renderMultiSubjectFilter(startChecked) {
+    const container = document.getElementById('multi-filter-container');
+    container.innerHTML = '';
+    
+    selectedMultiSubjects.forEach(subject => {
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'subject-group';
+        groupDiv.innerHTML = `<h3>${subject.charAt(0).toUpperCase() + subject.slice(1)}</h3>`;
+        
+        const grid = document.createElement('div');
+        grid.className = 'chapter-grid-compact';
+        
+        const subjectData = db[subject];
+        const subjectMeta = chapterMetadata[subject] || {};
+        
+        Object.keys(subjectData).forEach(chapKey => {
+            const meta = subjectMeta[chapKey] || { title: chapKey };
+            const card = document.createElement('div');
+            card.className = `chapter-checkbox-card ${startChecked ? 'checked' : ''}`;
+            card.dataset.subject = subject;
+            card.dataset.chapter = chapKey;
+            card.innerHTML = `
+                <div style="width:16px; height:16px; border:1px solid var(--text-muted); border-radius:3px; display:flex; align-items:center; justify-content:center; margin-right:5px;">
+                    ${startChecked ? '✓' : ''}
+                </div>
+                <span>${meta.title}</span>
+            `;
+            
+            card.onclick = () => {
+                card.classList.toggle('checked');
+                const checkMark = card.querySelector('div');
+                checkMark.innerHTML = card.classList.contains('checked') ? '✓' : '';
+            };
+            
+            grid.appendChild(card);
+        });
+        
+        groupDiv.appendChild(grid);
+        container.appendChild(groupDiv);
+    });
+}
+
+function gatherMultiSubjectFilter() {
+    multiSubjectFilter = {};
+    selectedMultiSubjects.forEach(s => multiSubjectFilter[s] = []);
+    
+    const cards = document.querySelectorAll('.chapter-checkbox-card.checked');
+    cards.forEach(card => {
+        const s = card.dataset.subject;
+        const c = card.dataset.chapter;
+        if (multiSubjectFilter[s]) multiSubjectFilter[s].push(c);
+    });
+}
+
+function prepareMultiSubjectQuiz(includeAll) {
+    if (includeAll) {
+        multiSubjectFilter = {};
+        selectedMultiSubjects.forEach(s => {
+            multiSubjectFilter[s] = Object.keys(db[s]);
+        });
+    }
+    
+    // Check if any chapters selected
+    let totalChapters = 0;
+    Object.values(multiSubjectFilter).forEach(arr => totalChapters += arr.length);
+    
+    if (totalChapters === 0) {
+        alert("Please select at least one chapter!");
+        return;
+    }
+    
+    // Set mode to test implicitly for multi-subject battle
+    selectedMode = 'test';
+    timerSettings.mode = 'normal'; // Default to normal timer, or we could ask. Assuming normal for now.
+    
+    initQuiz();
+}
+
 function initQuiz(retryChapter = null) {
     currentQuestionIndex = 0;
     score = 0;
@@ -864,7 +1066,45 @@ function initQuiz(retryChapter = null) {
 
     if (retryChapter) selectedChapter = retryChapter;
 
-    if (selectedChapter === 'mixed') {
+    if (isMultiSubjectMode) {
+        chapterName = "Multi-Subject Battle";
+        
+        // Gather questions per subject
+        let subjectQuestions = {};
+        selectedMultiSubjects.forEach(sub => {
+            subjectQuestions[sub] = [];
+            const allowedChapters = multiSubjectFilter[sub] || [];
+            allowedChapters.forEach(chap => {
+                if (db[sub][chap]) subjectQuestions[sub] = subjectQuestions[sub].concat(db[sub][chap]);
+            });
+            // Deduplicate within subject
+            subjectQuestions[sub] = getUniqueQuestions(subjectQuestions[sub]);
+        });
+
+        if (multiSubjectSettings.type === 'count') {
+            const totalReq = multiSubjectSettings.count;
+            const numSubjects = selectedMultiSubjects.length;
+            const targetPerSubject = Math.ceil(totalReq / numSubjects);
+            
+            selectedMultiSubjects.forEach(sub => {
+                let pool = shuffleArray(deepCopy(subjectQuestions[sub]));
+                // Take target amount, or all if not enough
+                let take = Math.min(pool.length, targetPerSubject);
+                rawList = rawList.concat(pool.slice(0, take));
+            });
+            
+            // If we have more than requested (due to ceil), trim randomly
+            if (rawList.length > totalReq) {
+                rawList = shuffleArray(rawList).slice(0, totalReq);
+            }
+        } else {
+            // Play All or Specific (All selected from filter)
+            selectedMultiSubjects.forEach(sub => {
+                rawList = rawList.concat(subjectQuestions[sub]);
+            });
+        }
+        
+    } else if (selectedChapter === 'mixed') {
         Object.values(db[selectedSubjectMode]).forEach(arr => rawList = rawList.concat(arr));
         chapterName = "Mixed Battle";
     } else if (selectedChapter === 'multi') {
@@ -898,7 +1138,12 @@ function initQuiz(retryChapter = null) {
         });
     } else {
         // PRACTICE MODE: Exact Order, Exact Options, Correct Selected
-        currentQuestions = deepCopy(rawList); // No shuffle
+        if (isMultiSubjectMode) {
+             // Practice not really supported in this flow, but if we did, shuffle anyway for multi
+             currentQuestions = shuffleArray(deepCopy(rawList));
+        } else {
+            currentQuestions = deepCopy(rawList); // No shuffle
+        }
     }
 
     subjectTag.textContent = chapterName;
@@ -909,7 +1154,12 @@ function initQuiz(retryChapter = null) {
     // Screen transition
     if (selectedMode === 'practice') {
         switchScreen(chapterScreen, quizScreen);
+    } else if (isMultiSubjectMode) {
+        if (!multiSubFilterScreen.classList.contains('hidden')) switchScreen(multiSubFilterScreen, quizScreen);
+        else if (!multiSubOptionsScreen.classList.contains('hidden')) switchScreen(multiSubOptionsScreen, quizScreen);
+        else switchScreen(multiSubSelectScreen, quizScreen); // Fallback
     } else {
+        switchScreen(chapterScreen, quizScreen);
         switchScreen(timerScreen, quizScreen);
     }
     
@@ -1273,3 +1523,51 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// --- Navigation & Controls ---
+function handleBack(currentScreen) {
+    switch(currentScreen) {
+        case 'reg': switchScreen(regScreen, introScreen); break;
+        case 'menu': switchScreen(menuScreen, regScreen); break;
+        case 'mode': switchScreen(modeScreen, menuScreen); break;
+        case 'chapter': switchScreen(chapterScreen, modeScreen); break;
+        case 'mixed-setup': switchScreen(mixedSetupScreen, chapterScreen); break;
+        case 'multi-chapter': switchScreen(multiChapterScreen, mixedSetupScreen); break;
+        case 'multi-sub-select': switchScreen(multiSubSelectScreen, menuScreen); break;
+        case 'multi-sub-options': switchScreen(multiSubOptionsScreen, multiSubSelectScreen); break;
+        case 'multi-sub-filter': switchScreen(multiSubFilterScreen, multiSubOptionsScreen); break;
+        case 'result': switchScreen(resultScreen, menuScreen); break;
+        case 'timer':
+            if (selectedChapter === 'mixed') switchScreen(timerScreen, mixedSetupScreen);
+            else if (selectedChapter === 'multi') switchScreen(timerScreen, multiChapterScreen);
+            else switchScreen(timerScreen, chapterScreen);
+            break;
+    }
+}
+
+function confirmAction(action) {
+    if (action === 'restart') {
+        showModal(
+            "Restart Battle?", 
+            "Are you sure you want to restart? Current progress will be lost.", 
+            () => {
+                // Restart logic
+                if (selectedMode === 'test') clearInterval(quizTimerInterval);
+                initQuiz();
+            }
+        );
+    } else if (action === 'quit') {
+        showModal(
+            "Quit Battle?", 
+            "Are you sure you want to quit? You will return to subject selection.", 
+            () => {
+                // Quit logic
+                if (selectedMode === 'test') clearInterval(quizTimerInterval);
+                // Reset streak display if quitting
+                if (streakDisplay) streakDisplay.classList.add('hidden');
+                currentStreak = 0;
+                switchScreen(quizScreen, menuScreen);
+            }
+        );
+    }
+}

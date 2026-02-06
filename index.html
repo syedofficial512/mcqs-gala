@@ -37,6 +37,7 @@
         <!-- Registration Screen -->
         <div id="reg-screen" class="screen hidden">
             <div class="glass-card" style="max-width: 500px;">
+                <button class="btn-back" onclick="handleBack('reg')">←</button>
                 <h2 style="margin-bottom: 20px;">Cadet Registration</h2>
                 <div class="form-group">
                     <label class="form-label">Full Name</label>
@@ -50,6 +51,7 @@
         <!-- Menu Screen -->
         <div id="menu-screen" class="screen hidden">
             <header class="app-header">
+                <button class="btn-back" onclick="handleBack('menu')">←</button>
                 <h2>Select Subject</h2>
                 <p>Choose your battlefield</p>
             </header>
@@ -75,12 +77,20 @@
                         <p>Reactions & Matter</p>
                     </div>
                 </button>
+                <button class="menu-card multi" onclick="selectSubject('multi')">
+                    <div class="icon-box">📚</div>
+                    <div class="card-text">
+                        <h3>Multi-Subject</h3>
+                        <p>Mixed Battle</p>
+                    </div>
+                </button>
             </div>
         </div>
 
         <!-- Mode Screen -->
         <div id="mode-screen" class="screen hidden">
             <header class="app-header">
+                <button class="btn-back" onclick="handleBack('mode')">←</button>
                 <h2>Select Mode</h2>
                 <p>Choose your path</p>
             </header>
@@ -99,6 +109,7 @@
         <!-- Chapter Screen -->
         <div id="chapter-screen" class="screen hidden">
             <header class="app-header">
+                <button class="btn-back" onclick="handleBack('chapter')">←</button>
                 <h2>Select Chapter</h2>
                 <p>Focus your study</p>
             </header>
@@ -110,6 +121,7 @@
         <!-- Mixed Setup Screen -->
         <div id="mixed-setup-screen" class="screen hidden">
             <div class="glass-card" style="max-width: 500px;">
+                <button class="btn-back" onclick="handleBack('mixed-setup')">←</button>
                 <h2 style="margin-bottom: 20px;">Mixed Battle Setup</h2>
                 <p style="color:var(--text-muted); margin-bottom:20px;">Total Available: <span id="total-mixed-count">0</span></p>
                 
@@ -129,6 +141,7 @@
         <!-- Multi Chapter Selection Screen -->
         <div id="multi-chapter-screen" class="screen hidden">
             <header class="app-header">
+                <button class="btn-back" onclick="handleBack('multi-chapter')">←</button>
                 <h2>Select Chapters</h2>
                 <p>Pick at least 2 units</p>
             </header>
@@ -140,9 +153,59 @@
             </div>
         </div>
 
+        <!-- Multi Subject Selection Screen -->
+        <div id="multi-sub-select-screen" class="screen hidden">
+            <header class="app-header">
+                <button class="btn-back" onclick="handleBack('multi-sub-select')">←</button>
+                <h2>Select Subjects</h2>
+                <p>Choose at least 2</p>
+            </header>
+            <div class="menu-grid" id="multi-sub-grid">
+                <!-- JS injected -->
+            </div>
+            <div style="margin-top: 20px; width: 100%; max-width: 500px;">
+                <button id="btn-multi-sub-next" class="btn-primary" style="width:100%">Next <span class="arrow">→</span></button>
+            </div>
+        </div>
+
+        <!-- Multi Subject Options Screen -->
+        <div id="multi-sub-options-screen" class="screen hidden">
+            <div class="glass-card" style="max-width: 500px;">
+                <button class="btn-back" onclick="handleBack('multi-sub-options')">←</button>
+                <h2 style="margin-bottom: 20px;">Battle Configuration</h2>
+                
+                <div class="form-group">
+                    <label class="form-label">Number of Questions</label>
+                    <input type="number" id="multi-count-input" class="form-input" placeholder="Enter amount (e.g. 50)">
+                </div>
+                
+                <div style="display:flex; gap:10px; flex-direction:column;">
+                    <button id="btn-multi-start-count" class="btn-primary" style="width:100%">Start Custom</button>
+                    <button id="btn-multi-specific" class="btn-primary" style="width:100%">Specific Chapters</button>
+                    <button id="btn-multi-play-all" class="btn-secondary" style="width:100%">Play All MCQs</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multi Subject Filter Screen -->
+        <div id="multi-sub-filter-screen" class="screen hidden">
+            <header class="app-header">
+                <button class="btn-back" onclick="handleBack('multi-sub-filter')">←</button>
+                <h2 id="filter-screen-title">Filter Chapters</h2>
+                <p id="filter-screen-subtitle">Select chapters to include</p>
+            </header>
+            <div id="multi-filter-container" style="width: 100%; max-width: 800px;">
+                <!-- JS injected grouped lists -->
+            </div>
+            <div style="margin-top: 20px; width: 100%; max-width: 500px; text-align: center;">
+                <button id="btn-multi-battle-start" class="btn-primary" style="width:100%">Start Battle ⚔️</button>
+            </div>
+        </div>
+
         <!-- Timer Options Screen -->
         <div id="timer-screen" class="screen hidden">
             <div class="glass-card" style="max-width: 500px;">
+                <button class="btn-back" onclick="handleBack('timer')">←</button>
                 <h2 style="margin-bottom: 20px;">Timer Options</h2>
                 <div class="form-group">
                     <div class="radio-group" style="flex-direction: column;">
@@ -173,6 +236,10 @@
         <!-- Quiz Screen -->
         <div id="quiz-screen" class="screen hidden">
             <div class="quiz-wrapper">
+                <div class="quiz-controls">
+                    <button class="btn-control" onclick="confirmAction('restart')">↺ Restart</button>
+                    <button class="btn-control danger" onclick="confirmAction('quit')">✕ Quit</button>
+                </div>
                 <header class="quiz-header">
                     <div class="header-top">
                         <span id="subject-tag" class="badge">Subject</span>
@@ -205,6 +272,7 @@
         <!-- Result Screen -->
         <div id="result-screen" class="screen hidden">
             <div class="glass-card result-card">
+                <button class="btn-back" onclick="handleBack('result')">←</button>
                 <h2>Mission Complete</h2>
                 <p id="result-user-name" style="color: var(--primary); font-weight: 600; margin-top: -10px; margin-bottom: 15px;"></p>
                 <div class="score-circle-container">
@@ -241,6 +309,18 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- Simple Modal for "Remove Chapters?" -->
+    <div id="confirmation-modal" class="modal">
+        <div class="glass-card modal-content">
+            <h3 id="modal-title">Filter Chapters?</h3>
+            <p id="modal-msg">Do you want to remove some chapters from the selection?</p>
+            <div class="action-buttons" style="margin-top: 20px;">
+                <button id="btn-modal-yes" class="btn-primary">Yes</button>
+                <button id="btn-modal-no" class="btn-secondary">No</button>
+            </div>
+        </div>
     </div>
 
     <div class="credits">Designed By <span>Syed Qammar Ali</span></div>

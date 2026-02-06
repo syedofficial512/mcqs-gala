@@ -596,3 +596,120 @@ button {
 
     .credits { font-size: 0.7rem; bottom: 10px; }
 }
+
+/* --- Modal --- */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+.modal-content {
+    max-width: 400px;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- Multi Subject Filter Styles --- */
+.subject-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.subject-group h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 5px;
+}
+.chapter-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+}
+.chapter-checkbox-card {
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.chapter-checkbox-card:hover {
+    background: rgba(255, 215, 0, 0.05);
+}
+.chapter-checkbox-card.checked {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* --- Back Button --- */
+.btn-back {
+    position: relative;
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+.btn-back:hover {
+    background: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+}
+
+.app-header h2, .glass-card h2 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* --- Quiz Controls --- */
+.quiz-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.btn-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-control:hover {
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+.btn-control.danger:hover {
+    background: rgba(255, 0, 0, 0.1);
+    color: var(--danger);
+    border-color: var(--danger);
+}
