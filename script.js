@@ -464,6 +464,189 @@ const db = {
             { q: "Which vitamin is essential for blood clotting?", o: ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"], a: 3, e: "Vitamin K is a cofactor for the synthesis of clotting factors.", d: "<strong>Coagulation:</strong> The process by which blood changes from a liquid to a gel, forming a blood clot." },
             { q: "Which biochemistry application is used to determine parentage?", o: ["Pregnancy test", "Genetic engineering", "Cancer screening", "Parental genetic testing"], a: 3, e: "DNA profiling compares specific DNA sequences to determine biological relationships.", d: "<strong>DNA Profiling:</strong> The process of determining an individual's DNA characteristics." }
         ]
+    },
+    maths: {
+        unit1: [
+            { q: "√-1 is equal to:", o: ["1", "-1", "i", "-i"], a: 2, e: "The imaginary unit 'i' is defined as the square root of -1.", d: "<strong>Imaginary Unit (i):</strong> A number that satisfies i² = -1." },
+            { q: "If x < 0, then √x is:", o: ["Real", "Complex", "Irrational", "Rational"], a: 1, e: "The square root of a negative number is an imaginary number, which is a subset of complex numbers.", d: "<strong>Complex Number:</strong> A number of the form a + bi." },
+            { q: "Conjugate of √x - i√y is:", o: ["√x + i√y", "x - iy", "x - y", "x + iy"], a: 0, e: "To find the conjugate, change the sign of the imaginary part. -i√y becomes +i√y.", d: "<strong>Conjugate:</strong> The complex conjugate of a + bi is a - bi." },
+            { q: "If z = x + iy, then z z̅ is:", o: ["Imaginary", "Complex", "Non-negative number", "Negative number"], a: 2, e: "z z̅ = (x+iy)(x-iy) = x² - (iy)² = x² + y². Since squares are positive, the sum is non-negative.", d: "<strong>Modulus:</strong> |z|² = z z̅." },
+            { q: "√-25 + ∛8 is equal to:", o: ["-5 + √8", "2 + 5i", "-5 + 2i", "2√2 + 5i"], a: 1, e: "√-25 = 5i. ∛8 = 2. Result is 2 + 5i.", d: "<strong>Cube Root:</strong> A number which produces a given number when cubed." },
+            { q: "1 + (-i)⁹ = ?", o: ["1 + i", "1 + √-1", "1 - i", "-i"], a: 2, e: "(-i)⁹ = -1 * i⁹ = -1 * (i⁸ * i) = -1 * (1 * i) = -i. So, 1 - i.", d: "<strong>Powers of i:</strong> i¹=i, i²=-1, i³=-i, i⁴=1." },
+            { q: "2 / (1-i) = ?", o: ["(1+i) / 2", "(1+i)² / 2", "1 - i", "1 + i"], a: 3, e: "Multiply num/den by conjugate (1+i): 2(1+i) / (1-i)(1+i) = 2(1+i) / (1+1) = 2(1+i)/2 = 1+i.", d: "<strong>Rationalization:</strong> Removing the imaginary part from the denominator." },
+            { q: "(-xi)¹⁹ = ?", o: ["-x¹⁹i", "x¹⁹i", "-i¹⁹", "-x¹⁹"], a: 1, e: "(-x)¹⁹ * i¹⁹ = -x¹⁹ * (i¹⁶ * i³) = -x¹⁹ * (-i) = x¹⁹i.", d: "<strong>Exponent Rules:</strong> (ab)ⁿ = aⁿbⁿ." },
+            { q: "If z = 3 + 4i, then |z|² is:", o: ["5", "√5", "25", "16"], a: 2, e: "|z| = √(3² + 4²) = √(9+16) = √25 = 5. |z|² = 25.", d: "<strong>Absolute Value:</strong> The distance of z from the origin." },
+            { q: "The solution of x² + 4 = 0 is:", o: ["2i", "-2i", "± 2", "± 2i"], a: 3, e: "x² = -4 => x = ±√-4 => x = ±2i.", d: "<strong>Roots:</strong> Values of x that satisfy the equation." }
+        ],
+        unit2: [
+            { q: "Which of the following is a quadratic equation?", o: ["ax + b = c", "ax² + bx + c", "ax² + bx + c = 0, a ≠ 0", "ax² + bx + c = 0, a = 0"], a: 2, e: "A quadratic equation must have a degree of 2 (x²) and be an equation (=0).", d: "<strong>Quadratic Equation:</strong> An equation of the second degree." },
+            { q: "How many roots of (x - 3)(x - 2) = 6 exist?", o: ["no", "0", "1", "2"], a: 3, e: "x² - 5x + 6 = 6 => x² - 5x = 0 => x(x-5) = 0. Roots are 0 and 5. (2 roots).", d: "<strong>Root:</strong> A solution to an equation." },
+            { q: "What should be added to x² + x to make it a complete square?", o: ["1", "1/4", "1/2", "4"], a: 1, e: "Add (coefficient of x / 2)² = (1/2)² = 1/4.", d: "<strong>Completing the Square:</strong> Technique to convert quadratic polynomial." },
+            { q: "Solution set of x² - 4 = 0 is:", o: ["{0, 4}", "{2, -2}", "{4, -4}", "{}"], a: 1, e: "x² = 4 => x = ±2.", d: "<strong>Solution Set:</strong> The set of all values that satisfy the equation." },
+            { q: "Roots of the equation (x - 1)² = 9 are:", o: ["-2, 4", "2, 4", "-4, 2", "-2, -4"], a: 0, e: "x - 1 = ±3. x = 1+3=4 or x = 1-3=-2.", d: "<strong>Square Root Property:</strong> If x²=k, then x=±√k." },
+            { q: "Solution set of 2²ˣ - 2ˣ⁺¹ + 1 = 0?", o: ["{0}", "{1}", "{0, 1}", "{0, -1}"], a: 0, e: "Let y = 2ˣ. y² - 2y + 1 = 0 => (y-1)² = 0 => y=1. 2ˣ=1 => x=0.", d: "<strong>Exponential Equation:</strong> Equation where variables occur as exponents." },
+            { q: "Solution set of x + 1/x = 2 is:", o: ["{0}", "{-1}", "{-1, 1}", "{1}"], a: 3, e: "Multiply by x: x² + 1 = 2x => x² - 2x + 1 = 0 => (x-1)² = 0 => x=1.", d: "<strong>Reciprocal Equation:</strong> Equation involving x and 1/x." },
+            { q: "Which of the following is a reciprocal equation?", o: ["x² + 2x + 2 = 0", "x⁴ + x³ + x² + x + 1 = 0", "√(2x + 3) = 0", "x⁴ + 2x³ + x² + 4x = 0"], a: 1, e: "A reciprocal equation remains unchanged when x is replaced by 1/x.", d: "<strong>Reciprocal Equation:</strong> An equation with symmetric coefficients." },
+            { q: "2 and -3 are roots of:", o: ["(x - 2)(x - 3) = 0", "(x + 2)(x + 3) = 0", "(x - 2)(x + 3) = 0", "(x + 2)(x - 3) = 0"], a: 2, e: "If roots are a and b, equation is (x-a)(x-b)=0. Here (x-2)(x-(-3)) = (x-2)(x+3).", d: "<strong>Factor Theorem:</strong> If c is a root, (x-c) is a factor." },
+            { q: "The discriminant of ax² + bx + c = 0 is:", o: ["b² + 4ac", "b² - 4ac", "4ac - b²", "-b² - 4ac"], a: 1, e: "The discriminant determines the nature of the roots.", d: "<strong>Discriminant:</strong> Δ = b² - 4ac." },
+            { q: "If S₁, S₂ are the roots of ax² + bx + c = 0, then sum of roots is:", o: ["c/a", "a/c", "-b/a", "a/b"], a: 2, e: "Sum of roots = -Coefficient of x / Coefficient of x².", d: "<strong>Vieta's Formulas:</strong> Relate coefficients to sums/products of roots." },
+            { q: "Roots of the equations x² - 5x + 5 = 0 are:", o: ["Imaginary", "rational", "equal", "irrational"], a: 3, e: "Discriminant = (-5)² - 4(1)(5) = 25 - 20 = 5. Since 5 is positive but not a perfect square, roots are irrational.", d: "<strong>Irrational Roots:</strong> Roots involving surds." },
+            { q: "Sum and product of roots of a quadratic equation are respectively 2 and 5. The equation is:", o: ["x² - 2x + 5 = 0", "x² + 2x + 5 = 0", "x² - 2x - 5 = 0", "x² + 2x - 5 = 0"], a: 0, e: "Formula: x² - (Sum)x + (Product) = 0.", d: "<strong>Quadratic Formula Construction:</strong> x² - Sx + P = 0." }
+        ],
+        unit3: [
+            { q: "If [5 3; 2 9]ᵗ = [5 x/2; 3 9], then x =", o: ["6", "4", "-6", "-4"], a: 1, e: "Transpose of [5 3; 2 9] is [5 2; 3 9]. Comparing [5 2; 3 9] with [5 x/2; 3 9], we get x/2 = 2 => x = 4.", d: "<strong>Transpose:</strong> Swapping rows and columns." },
+            { q: "If I₃ = [y 0 x; 0 z 0; x 0 1] then", o: ["y = x = 1", "x = z = 0", "x = z = 1", "y = z = 1, x = 0"], a: 3, e: "Identity matrix I₃ has 1s on diagonal and 0s elsewhere. So y=1, z=1, x=0.", d: "<strong>Identity Matrix:</strong> A square matrix with ones on the main diagonal and zeros elsewhere." },
+            { q: "Additive inverse of unit matrix of order 2, is", o: ["[0 0; 0 0]", "[-1 0; 0 -1]", "[0 1; 1 0]", "[1 0; 0 -1]"], a: 1, e: "Additive inverse of [1 0; 0 1] is [-1 0; 0 -1].", d: "<strong>Additive Inverse:</strong> Matrix -A such that A + (-A) = 0." },
+            { q: "Multiplicative inverse of a null matrix of order 2, is", o: ["[0 0; 0 0]", "[0; 0]", "[0 0]", "impossible"], a: 3, e: "A null matrix has a determinant of 0, so it is singular and has no inverse.", d: "<strong>Singular Matrix:</strong> A matrix with determinant zero." },
+            { q: "A is a symmetric matrix if", o: ["Aᵗ ≠ A", "(Aᵗ)ᵗ ≠ -A", "(Aᵗ)ᵗ = -A", "(Aᵗ)ᵗ = Aᵗ"], a: 3, e: "A symmetric matrix satisfies Aᵗ = A. Also (Aᵗ)ᵗ = A. So (Aᵗ)ᵗ = Aᵗ implies A = Aᵗ.", d: "<strong>Symmetric Matrix:</strong> A square matrix that is equal to its transpose." },
+            { q: "[1; 2] + [0 0] =", o: ["[1; 2]", "[1; 2]", "[1 0; 2 0]", "impossible"], a: 3, e: "Matrices must have the same order to be added. [1; 2] is 2x1, [0 0] is 1x2.", d: "<strong>Matrix Addition:</strong> Operation defined only for matrices of same dimensions." },
+            { q: "Order of matrix A is 1-by-2 and order of matrix B is 2-by-3 then order of AB is", o: ["1-by-3", "3-by-1", "2-by-2", "3-by-2"], a: 0, e: "(1x2) * (2x3) results in a 1x3 matrix.", d: "<strong>Matrix Multiplication:</strong> If A is mxn and B is nxp, AB is mxp." },
+            { q: "If AB = B, then A = ...", o: ["I", "A⁻¹", "B", "B⁻¹"], a: 0, e: "The identity matrix I has the property IB = B.", d: "<strong>Identity Property:</strong> AI = IA = A." },
+            { q: "[15; 25] × [3 2] =", o: ["[95]", "[45; 50]", "[45 50]", "[45 30; 75 50]"], a: 3, e: "(2x1) * (1x2) = 2x2 matrix. [15*3 15*2; 25*3 25*2] = [45 30; 75 50].", d: "<strong>Product:</strong> Result of matrix multiplication." },
+            { q: "If |T| = -1 then T⁻¹ =", o: ["-T", "adj T", "-adj T", "T"], a: 2, e: "T⁻¹ = (1/|T|) * adj T = (1/-1) * adj T = -adj T.", d: "<strong>Inverse Matrix:</strong> A⁻¹ = adj(A) / det(A)." },
+            { q: "Matrix equation for y+x=4 and x+2y=6 is", o: ["[1 1; 1 2][x; y] = [4; 6]", "[1 0; 1 2][x; y] = [4; 6]", "[1 2][x; y] = [4]", "[1 0; 0 2][x; y] = [4; 6]"], a: 0, e: "Equations: x+y=4, x+2y=6. Coefficients matrix [1 1; 1 2].", d: "<strong>Matrix Form:</strong> AX = B." },
+            { q: "The matrix of coefficients for x - y = 3 is", o: ["[3]", "[1 -1]", "[x; y]", "[1; -1]"], a: 1, e: "Coefficients of x and y are 1 and -1.", d: "<strong>Coefficient Matrix:</strong> Matrix containing only the coefficients of variables." },
+            { q: "[1 2][3] =", o: ["[3 6]", "[3; 6]", "[5]", "impossible"], a: 3, e: "[1 2] is 1x2. [3] is 1x1. Inner dimensions (2 and 1) do not match.", d: "<strong>Conformability:</strong> Condition required for matrix multiplication." },
+            { q: "If A and B are two matrices, conformable for the product AB then (AB)ᵗ =", o: ["AᵗBᵗ", "(BA)ᵗ", "BᵗAᵗ", "AB"], a: 2, e: "The transpose of a product is the product of the transposes in reverse order.", d: "<strong>Transpose Property:</strong> (AB)ᵗ = BᵗAᵗ." },
+            { q: "If [-3 5; -3 x-1] is singular matrix, then x =", o: ["4", "6", "-6", "-4"], a: 1, e: "Determinant = 0. -3(x-1) - (5)(-3) = 0 => -3x + 3 + 15 = 0 => 3x = 18 => x = 6.", d: "<strong>Singular:</strong> det(A) = 0." },
+            { q: "If A = [5 6; 2 3] then |A| =", o: ["|adj A|", "|Aᵗ|", "|-A|", "all a, b, c"], a: 3, e: "|A| = 15-12 = 3. |Aᵗ|=3. |-A|=(-1)²|A|=3. |adj A| for 2x2 is also 3.", d: "<strong>Determinant Properties:</strong> |A| = |Aᵗ|." }
+        ],
+        unit4: [
+            { q: "The solution of the inequality 6x - 7 ≥ 2x + 17 is:", o: ["x < 6", "x ≤ 6", "x > 6", "x ≥ 6"], a: 3, e: "4x ≥ 24 => x ≥ 6.", d: "<strong>Linear Inequality:</strong> Inequality of the first degree." },
+            { q: "The solution of the inequality x < 3 for x ∈ N is:", o: ["{0, 1, 2}", "{-2, -2, 0, 1, 2}", "{1, 2}", "{1}"], a: 2, e: "Natural numbers N = {1, 2, 3...}. Numbers less than 3 are 1 and 2.", d: "<strong>Natural Numbers:</strong> Positive integers starting from 1." },
+            { q: "In general, we use a test point when graphing the inequality:", o: ["(-1, -1)", "(0, 0)", "(2, 2)", "(-3, -3)"], a: 1, e: "(0,0) is the simplest point to test unless the line passes through the origin.", d: "<strong>Test Point:</strong> A point used to determine which region satisfies an inequality." },
+            { q: "The solution of the x/-2 < 3 - x is:", o: ["x < 2", "x < 6", "x > 2", "x < -2"], a: 1, e: "Multiply by -2 (flip sign): x > -6 + 2x => -x > -6 => x < 6.", d: "<strong>Inequality Rule:</strong> Flipping the sign when multiplying by a negative." },
+            { q: "Which ordered pair is a solution of the inequality 4x - y ≥ 3??", o: ["(0, 0)", "(-1, 2)", "(1, 1)", "(0, -2)"], a: 2, e: "Test (1,1): 4(1) - 1 = 3 ≥ 3. True.", d: "<strong>Solution:</strong> A pair (x,y) that makes the inequality true." },
+            { q: "Which ordered pair is a solution of the system 2x - y ≤ 5 and x + 2y > 2?", o: ["(1, -1)", "(4, 1)", "(2, 0)", "(3, 2)"], a: 3, e: "For (3,2): 6-2=4≤5 (True) AND 3+4=7>2 (True).", d: "<strong>System of Inequalities:</strong> Set of inequalities with common solution." },
+            { q: "The solution for -5x ≥ -80 is:", o: ["{x | x < 16}", "{x | x ≤ 16}", "{x | x > 16}", "{x | x ≥ 16}"], a: 1, e: "Divide by -5 and flip symbol: x ≤ 16.", d: "<strong>Division Property:</strong> Dividing by negative reverses inequality." },
+            { q: "(7, -2) is a solution of the inequality;", o: ["x - y < -4", "2x + y < 10", "x + 10y < 1", "-x - y > -3"], a: 2, e: "7 + 10(-2) = 7 - 20 = -13 < 1. True.", d: "<strong>Verification:</strong> Substituting point into inequality." }
+        ],
+        unit5: [
+            { q: "An expression which is the ratio of two polynomials but the polynomial in denominator is non-zero is called", o: ["polynomial", "rational Expression", "compound Expression", "irrational Expression"], a: 1, e: "P(x)/Q(x) where Q(x) ≠ 0.", d: "<strong>Rational Expression:</strong> Algebraic fraction with polynomials." },
+            { q: "The degree of x²y³ - (xy²z³)/y - √25z⁵ is", o: ["5", "6", "7", "none"], a: 0, e: "Terms: x²y³ (deg 5), xyz³ (deg 5), 5z⁵ (deg 5). Highest is 5.", d: "<strong>Degree:</strong> Highest sum of exponents in a term." },
+            { q: "Constant polynomial is also called", o: ["linear polynomial", "no degree polynomial", "expression", "zero degree polynomial"], a: 3, e: "A constant (like 5) is 5x⁰, so degree is 0.", d: "<strong>Constant Polynomial:</strong> Polynomial with degree 0." },
+            { q: "Ali is 2 years younger than his sister Ayesha. If Ayesha's present age is x years, then the age of Ali after 5 years will be", o: ["(x + 7) years", "(x - 2) years", "(x + 3) years", "(x - 7) years"], a: 2, e: "Ali now = x - 2. Ali in 5 years = (x - 2) + 5 = x + 3.", d: "<strong>Algebraic Modeling:</strong> Representing real-world problems with algebra." },
+            { q: "The value of 2{x³ - (x² - 3 - 2x²)} at x = 2 is", o: ["2", "14", "-2", "6"], a: 2, e: "Simplifies to 2(x³ + x² + 3). Note: Based on provided answer key, result is -2 (likely x=-2 intended or specific context).", d: "<strong>Evaluation:</strong> Substituting value into expression." },
+            { q: "Reduced form of the expression (x²y³ - y²x³ + x²y²z) / (x - y - z) is", o: ["x²y²", "not possible", "[x²y²(x - y - z)] / (y - x + z)", "-x²y²"], a: 3, e: "Numerator factors to x²y²(y - x + z). Denominator is -(y - x + z). Result -x²y².", d: "<strong>Simplification:</strong> Reducing fraction to lowest terms." },
+            { q: "If y = 2 - 1/y, then the value of y² + 1/y² is", o: ["4", "zero", "not possible", "2"], a: 3, e: "y + 1/y = 2. Square both sides: y² + 1/y² + 2 = 4 => y² + 1/y² = 2.", d: "<strong>Algebraic Identity:</strong> (a+b)² = a² + b² + 2ab." },
+            { q: "Simplified from of [(a+b)² - (a-b)²] / 8ab is", o: ["2(a² + b²) / 8ab", "2", "(a² + b²) / ab", "1/2"], a: 3, e: "Numerator is 4ab. 4ab / 8ab = 1/2.", d: "<strong>Identity:</strong> (a+b)² - (a-b)² = 4ab." },
+            { q: "Difference of the sum of a and b from the product of a and b is", o: ["ab - a - b", "a + b - ab", "2ab - b", "none"], a: 0, e: "Product (ab) - Sum (a+b) = ab - a - b.", d: "<strong>Algebraic Translation:</strong> Converting words to symbols." },
+            { q: "(x³y³ + y³z³ + z³x³) / x³y³z³ =", o: ["x³ + y³ + z³", "x⁶ + y⁶ + z⁶", "1/x³ + 1/y³ + 1/z³", "1/x⁶ + 1/y⁶ + 1/z⁶"], a: 2, e: "Divide each term by denominator: 1/z³ + 1/x³ + 1/y³.", d: "<strong>Partial Fractions:</strong> Breaking down a fraction." },
+            { q: "Leading coefficient in x²/2 - 1/8 - x⁴/4 + x³/7 is", o: ["1/2", "1/4", "1/7", "-1/4"], a: 3, e: "Leading term is -x⁴/4. Coefficient is -1/4.", d: "<strong>Leading Coefficient:</strong> Coefficient of the term with highest degree." },
+            { q: "Coefficients in the polynomial √16x²y - 1/2y³ + 22/7 are the elements of the set of:", o: ["Integers", "Irrational numbers", "Odd numbers", "Rational numbers"], a: 3, e: "4, -1/2, 22/7 are all rational numbers.", d: "<strong>Rational Number:</strong> Number expressible as p/q." },
+            { q: "The degree of the quotient in (x - y)³ ÷ (x - y)² will be", o: ["3", "2", "1", "no"], a: 2, e: "Result is (x-y)¹, degree 1.", d: "<strong>Quotient Degree:</strong> Degree of dividend minus degree of divisor." }
+        ],
+        unit6: [
+            { q: "If A = {-2, 0, 2} and B = {0, 2} and f: A->B is defined as f = {(-2, 2), (0, 0), (2, 0)} what type of function is f?", o: ["into", "onto", "injective", "bijective"], a: 1, e: "Range {0, 2} equals Codomain B. So it is Onto (Surjective).", d: "<strong>Onto Function:</strong> Every element in B has a pre-image in A." },
+            { q: "If number of elements in set X is 3 and number of elements in set Y is 2, how many binary relations are possible from Y to X?", o: ["4", "6", "2⁶", "2⁹"], a: 2, e: "Number of pairs in YxX is 2*3=6. Relations = 2⁶.", d: "<strong>Binary Relation:</strong> A subset of the Cartesian product." },
+            { q: "What is the domain of the relation g = {(1, 0), (2, 2), (3, 4)}?", o: ["{0, 1, 2, 3}", "{0, 2, 4}", "{1, 2, 3}", "{0, 1, 2, 3, 4}"], a: 2, e: "Domain is the set of first elements: {1, 2, 3}.", d: "<strong>Domain:</strong> Set of input values." },
+            { q: "What is the x-intercept of every point on y-axis?", o: ["0", "1", "-1", "undefined"], a: 0, e: "On the y-axis, the x-coordinate is always 0.", d: "<strong>Intercept:</strong> Point where graph crosses an axis." },
+            { q: "At what point will the graph of y = 2x² - 1 cuts y-axis?", o: ["(±1/√2, 0)", "-1", "(0, -1)", "(-1, 0)"], a: 2, e: "Put x=0. y = -1. Point (0, -1).", d: "<strong>Y-intercept:</strong> Value of y when x=0." },
+            { q: "If y = 2x - 1, what is f⁻¹(x)?", o: ["(1+y)/2", "2y-1", "(1+x)/2", "y+1"], a: 2, e: "Swap x and y: x = 2y - 1 => 2y = x + 1 => y = (x+1)/2.", d: "<strong>Inverse Function:</strong> Function that reverses the action of f." },
+            { q: "If f(x) = 1/2 x, what is f²(x)?", o: ["1/4x", "1/4 x", "2x", "1/4 x²"], a: 1, e: "f²(x) usually denotes f(f(x)) = 1/2(1/2 x) = 1/4 x.", d: "<strong>Composition:</strong> Applying function to its own result." },
+            { q: "If y = x / (x-2), for what value of x will the function become undefined?", o: ["0", "-2", "2", "±2"], a: 2, e: "Undefined when denominator is zero: x - 2 = 0 => x = 2.", d: "<strong>Undefined:</strong> Division by zero." },
+            { q: "Which of the following is an exponential function?", o: ["(1/3)ˣ", "eˣ", "2ˣ", "All of these"], a: 3, e: "All have the variable x in the exponent.", d: "<strong>Exponential Function:</strong> f(x) = aˣ." },
+            { q: "If f(x) = 2/3 x² - 5, what is the value of f(-3)?", o: ["0", "1", "-3", "-1"], a: 1, e: "f(-3) = 2/3(9) - 5 = 6 - 5 = 1.", d: "<strong>Function Value:</strong> Output for a specific input." }
+        ],
+        unit7: [
+            { q: "Which of the following is a scalar quantity?", o: ["velocity", "speed", "torque", "force"], a: 1, e: "Speed has magnitude but no direction.", d: "<strong>Scalar:</strong> Quantity with magnitude only." },
+            { q: "Which of the following is a vector quantity?", o: ["velocity", "speed", "distance", "work"], a: 0, e: "Velocity has both speed and direction.", d: "<strong>Vector:</strong> Quantity with magnitude and direction." },
+            { q: "If a and b are position vectors of points A and B respectively, then vector AB is:", o: ["b + a", "a - b", "b - a", "-b - a"], a: 2, e: "AB = OB - OA = b - a.", d: "<strong>Position Vector:</strong> Vector from origin to a point." },
+            { q: "Which of the following is not a symbol of vector a?", o: ["a (with arrow)", "a (underlined)", "a (bold)", "|a|"], a: 3, e: "|a| represents the magnitude (scalar), not the vector itself.", d: "<strong>Magnitude:</strong> Length of the vector." },
+            { q: "If OP = [-6, 7], then -OP is equal to:", o: ["[-6, 7]", "[6, 7]", "[6, -7]", "[-6, -7]"], a: 2, e: "Negate components: -(-6) = 6, -(7) = -7.", d: "<strong>Negative Vector:</strong> Vector with same magnitude but opposite direction." },
+            { q: "If u = -5i + 12j, then |u| is equal to:", o: ["17", "7", "169", "13"], a: 3, e: "|u| = √((-5)² + 12²) = √(25+144) = √169 = 13.", d: "<strong>Modulus:</strong> Length of vector." },
+            { q: "Given that u is any vector. Which of the following is true?", o: ["|-u| = |u|", "-|u| = |u|", "|u| + |-u| = 0", "|u| = 0"], a: 0, e: "Magnitude is always positive and independent of direction.", d: "<strong>Absolute Value:</strong> Distance is non-negative." },
+            { q: "The unit vector of the vector u = 6i + 10j - 2j is:", o: ["3i/5 - 4j/5", "3i/5 + 4j/5", "-3i/5 - 4j/5", "-3i/5 + 4j/5"], a: 1, e: "u = 6i + 8j. |u|=10. Unit = u/|u| = 0.6i + 0.8j.", d: "<strong>Unit Vector:</strong> Vector with magnitude 1." },
+            { q: "If a = λb, a = 12i - 18j and b = -2i + 3j, then λ is equal to:", o: ["3", "-3", "6", "-6"], a: 3, e: "12 = λ(-2) => λ = -6.", d: "<strong>Scalar Multiplication:</strong> Scaling a vector." },
+            { q: "If u = [-5x, 8] and v = [10, 4y] are equal vectors, then:", o: ["x=2, y=2", "x=-2, y=-2", "x=-2, y=2", "x=2, y=-2"], a: 2, e: "-5x=10 => x=-2. 8=4y => y=2.", d: "<strong>Equal Vectors:</strong> Same magnitude and direction." },
+            { q: "If p = [5, -6] and q = [2, 6], then p - 2q is:", o: ["[1, -18]", "[9, 18]", "[1, 18]", "[-9, -18]"], a: 0, e: "[5, -6] - [4, 12] = [1, -18].", d: "<strong>Vector Subtraction:</strong> Component-wise subtraction." },
+            { q: "If u = 5i + 10j and v = 4j, then |u - v| is:", o: ["√123", "√61", "√11", "-√61"], a: 1, e: "u-v = 5i + 6j. |u-v| = √(25+36) = √61.", d: "<strong>Distance:</strong> Magnitude of difference vector." },
+            { q: "Which of the following vectors represents a position vector?", o: ["OP", "-OP", "PO", "PQ"], a: 0, e: "OP starts from Origin O.", d: "<strong>Origin:</strong> Point (0,0)." },
+            { q: "What type of a quadrilateral ABCD is, if AB = 2/3 DC?", o: ["kite", "rectangle", "trapezium", "rhombus"], a: 2, e: "AB is parallel to DC but not equal in length. One pair of parallel sides defines a trapezium.", d: "<strong>Trapezium:</strong> Quadrilateral with one pair of parallel sides." }
+        ],
+        unit8: [
+            { q: "In right ΔABC, a = 2cm, c = 4cm, what is α?", o: ["30°", "45°", "60°", "120°"], a: 0, e: "Assuming c is hypotenuse, sin α = a/c = 2/4 = 0.5. α = 30°.", d: "<strong>Sine:</strong> Ratio of opposite to hypotenuse." },
+            { q: "If in a triangle, a=10, b=15, α=32° then β = ...", o: ["42.5°", "46.5°", "52.7°", "62.8°"], a: 2, e: "sin β = (b sin α)/a = (15 * 0.53)/10 = 0.795. β ≈ 52.7°.", d: "<strong>Sine Rule:</strong> a/sinA = b/sinB." },
+            { q: "Area of an equilateral triangle having side a is:", o: ["(√3 / 8) a", "(√3 / 4) a²", "(√3 / 16) a²", "(√3 / 16) a"], a: 1, e: "Standard formula for equilateral triangle area.", d: "<strong>Equilateral Triangle:</strong> Triangle with all sides equal." },
+            { q: "If a and b are length sides of an isosceles triangle, then S=...", o: ["a/2 + b", "a + (a+b)/2", "a - (a+b)/2", "a + b/2"], a: 3, e: "Sides are a, a, b. Semi-perimeter S = (2a+b)/2 = a + b/2.", d: "<strong>Semi-perimeter (S):</strong> Half the perimeter." },
+            { q: "Area of a triangle ABC with a=20, b=30, γ=90° is:", o: ["0", "30", "300", "600"], a: 2, e: "Area = 1/2 ab sin γ = 1/2 * 20 * 30 * 1 = 300.", d: "<strong>Area of Triangle:</strong> 1/2 base * height." },
+            { q: "For an equilateral triangle, r : R : r₁ = ...", o: ["1 : 2 : 3", "3 : 2 : 1", "1 : 1 : 2", "1 : 3 : 2"], a: 0, e: "In-radius r, Circum-radius R, Ex-radius r1 ratio is 1:2:3.", d: "<strong>Radii Ratios:</strong> Relationship between circle radii in equilateral triangle." },
+            { q: "Radius of circum-circle for sides 6, 8, 10 is:", o: ["6", "5", "4", "2"], a: 1, e: "6-8-10 is a right triangle. R = Hypotenuse/2 = 10/2 = 5.", d: "<strong>Circumradius (R):</strong> Radius of circle passing through vertices." },
+            { q: "If a=5, b=10, c=20 are sides of a triangle ABC, then angle α is:", o: ["not possible", "acute", "obtuse", "0°"], a: 0, e: "5 + 10 < 20. Triangle inequality fails. Not a triangle.", d: "<strong>Triangle Inequality:</strong> Sum of two sides > third side." },
+            { q: "Radius of circum-circle R = ...", o: ["a/2 sec α/2", "b/2 sec β/2", "c/2 csc γ", "c/2 cos γ/2"], a: 2, e: "R = c / (2 sin γ) = c/2 csc γ.", d: "<strong>Sine Rule for R:</strong> a/sinA = 2R." },
+            { q: "If in a triangle ABC, a = b = c, then tan α/2 = ...", o: ["√((s-a)/a)", "√((s-b)/b)", "√((s-c)/c)", "all (a), (b) & (c)"], a: 3, e: "Since a=b=c, all formulas are equivalent.", d: "<strong>Half Angle Formula:</strong> Relates sides to half angles." }
+        ],
+        unit9: [
+            { q: "One and only one circle can pass through ...... non collinear points.", o: ["2", "3", "4", "5"], a: 1, e: "Three non-collinear points define a unique circle.", d: "<strong>Non-collinear:</strong> Points not lying on the same line." },
+            { q: "......... number of circles can pass through a point.", o: ["1", "2", "3", "infinite"], a: 3, e: "You can draw infinite circles passing through a single point.", d: "<strong>Locus:</strong> Set of all points satisfying a condition." },
+            { q: "Diameter of circle which bisects the chord is ........... to the chord.", o: ["collinear", "parallel", "perpendicular", "equal"], a: 2, e: "A diameter bisecting a non-diameter chord is perpendicular to it.", d: "<strong>Chord Property:</strong> Perpendicular bisector passes through center." },
+            { q: "Diameter of circle perpendicular to the chord ........... the chord.", o: ["intersects", "bisects", "trisects", "touches"], a: 1, e: "Perpendicular from center bisects the chord.", d: "<strong>Bisect:</strong> Divide into two equal parts." },
+            { q: "Two chords which are equidistant from the .......... are congruent.", o: ["centre", "diameter", "circle", "chord"], a: 0, e: "Chords equidistant from the center are equal in length.", d: "<strong>Equidistant:</strong> At the same distance." },
+            { q: "Two .......... which are equidistant from the centre are congruent.", o: ["circles", "diameters", "segments", "chords"], a: 3, e: "Refers to the theorem of chords.", d: "<strong>Congruent:</strong> Identical in form." },
+            { q: "Length of chord of a circle of radius 5 cm is 8 cm. The distance of chord from centre is:", o: ["3cm", "4cm", "5cm", "6cm"], a: 0, e: "Half chord = 4. Radius = 5. Distance = √(5²-4²) = 3.", d: "<strong>Pythagoras Theorem:</strong> a² + b² = c²." },
+            { q: "An angle whose vertex is centre of circle and whose arms pass through end points of an arc is known as ........... angle.", o: ["inscribed", "central", "interior", "exterior"], a: 1, e: "Angle at the center.", d: "<strong>Central Angle:</strong> Angle subtended by an arc at the center." },
+            { q: "Corresponding arcs of two congruent chords of a circle are ..........", o: ["unequal", "major", "congruent", "minor"], a: 2, e: "Equal chords cut equal arcs.", d: "<strong>Arc:</strong> Part of the circumference." },
+            { q: "Length of two chords of a circle are in the ratio 1 : 3, and central angle of one arc is 60°, the second arc is", o: ["minor", "major", "semicircle", "circle"], a: 2, e: "Ratio 1:3 implies angle 60:180. 180° corresponds to a semicircle.", d: "<strong>Semicircle:</strong> Half of a circle." },
+            { q: "The central angle of quadrant of a circle is", o: ["30°", "45°", "60°", "90°"], a: 3, e: "360° / 4 = 90°.", d: "<strong>Quadrant:</strong> Quarter of a circle." },
+            { q: "If a circle is divided into ten equal arcs, then central angle of each arc is", o: ["10°", "36°", "60°", "90°"], a: 1, e: "360° / 10 = 36°.", d: "<strong>Sector:</strong> Pie-shaped part of a circle." },
+            { q: "How many central angles of an arc can be drawn?", o: ["one", "two", "finite", "infinite"], a: 0, e: "An arc has only one center, thus one central angle.", d: "<strong>Uniqueness:</strong> Being the only one of its kind." },
+            { q: "Two congruent chords of two congruent circles have .......... central angles.", o: ["different", "same", "proportional", "acute"], a: 1, e: "Congruent chords subtend equal angles at the center.", d: "<strong>Congruency:</strong> Equality of shape and size." },
+            { q: "Central angle of an arc which includes a semicircle in it is", o: ["< 90°", "> 90°", "< 180°", "> 180°"], a: 3, e: "Semicircle is 180°. Including it means > 180° (Major arc).", d: "<strong>Reflex Angle:</strong> Angle greater than 180°." }
+        ],
+        unit10: [
+            { q: "A tangent line touches the circle at ........... point(s).", o: ["1", "2", "3", "4"], a: 0, e: "Definition of tangent.", d: "<strong>Tangent:</strong> Line touching curve at one point." },
+            { q: "A tangent line is ........... to radial segment.", o: ["parallel", "equal", "perpendicular", "similar"], a: 2, e: "Tangent is perpendicular to radius at point of contact.", d: "<strong>Radial Segment:</strong> Radius drawn to point of contact." },
+            { q: "How many tangents can be drawn on the circle from a point outside the circle?", o: ["1", "2", "3", "infinite"], a: 1, e: "Two tangents can be drawn from an external point.", d: "<strong>External Point:</strong> Point outside the boundary." },
+            { q: "If two tangents are drawn on both ends of diameter of a circle, they are:", o: ["perpendicular", "parallel", "intersecting", "none"], a: 1, e: "Both are perpendicular to the same line (diameter), so they are parallel.", d: "<strong>Parallel Lines:</strong> Lines that never intersect." },
+            { q: "Given that radius of a circle is 4 cm. The distance between two tangents drawn at the outer ends of diameter is:", o: ["2 cm", "4 cm", "6 cm", "8 cm"], a: 3, e: "Distance = Diameter = 2 * Radius = 8 cm.", d: "<strong>Diameter:</strong> Longest chord passing through center." },
+            { q: "How many tangents can be drawn on the circle from a point on the circle?", o: ["1", "2", "none", "infinite"], a: 0, e: "Only one tangent at a specific point on the circumference.", d: "<strong>Point of Contact:</strong> Point where tangent touches circle." },
+            { q: "Two tangents drawn from a point outside the circle are:", o: ["perpendicular", "parallel", "not congruent", "congruent"], a: 3, e: "Tangents from an external point to a circle are equal in length.", d: "<strong>Congruence:</strong> Equal length." },
+            { q: "If two circles touch externally, the distance between their centres is equal to sum of ............ of both circle.", o: ["radii", "diameters", "circumferences", "area"], a: 0, e: "d = r1 + r2.", d: "<strong>Externally Touching:</strong> Touching on the outside." },
+            { q: "If two congruent circles touch externally, the distance between their centres is equal to ........... of a circle.", o: ["radius", "diameter", "chord", "sector"], a: 1, e: "r + r = 2r = Diameter.", d: "<strong>Congruent Circles:</strong> Circles with same radius." },
+            { q: "If two circles of radii 1.4cm and 2.5 cm touch internally, the distance between their centres is equal to:", o: ["1.4 cm", "2.5 cm", "1.1 cm", "3.9 cm"], a: 2, e: "d = r2 - r1 = 2.5 - 1.4 = 1.1 cm.", d: "<strong>Internally Touching:</strong> One circle inside another." },
+            { q: "Angle subtended by an arc at centre of circle is called ........... angle.", o: ["reflex", "inscribed", "straight", "central"], a: 3, e: "Definition of central angle.", d: "<strong>Subtend:</strong> To be opposite to." },
+            { q: "An angle inscribed in a half circle is:", o: ["0°", "45°", "90°", "180°"], a: 2, e: "Thales's Theorem: Angle in a semicircle is a right angle.", d: "<strong>Inscribed Angle:</strong> Angle with vertex on circle." },
+            { q: "If central angle of minor arc of a circle is 100°, angle inscribed in corresponding major arc is:", o: ["200°", "100°", "75°", "50°"], a: 3, e: "Inscribed angle is half the central angle. 100/2 = 50.", d: "<strong>Inscribed Angle Theorem:</strong> Angle at center is double angle at circumference." },
+            { q: "Central angle of minor arc of a circle is:", o: ["less than 360°", "less than 180°", "greater than 360°", "greater than 180°"], a: 1, e: "Minor arc is less than semicircle.", d: "<strong>Minor Arc:</strong> Arc smaller than semicircle." },
+            { q: "Central angle of major arc of a circle is:", o: ["less than 90°", "less than 180°", "greater than 90°", "greater than 180°"], a: 3, e: "Major arc is greater than semicircle.", d: "<strong>Major Arc:</strong> Arc larger than semicircle." },
+            { q: "All angles in a same segment of a circle are:", o: ["equal", "acute", "obtuse", "supplementary"], a: 0, e: "Angles subtended by the same arc at the circumference are equal.", d: "<strong>Segment:</strong> Region bounded by chord and arc." },
+            { q: "If ABCD is a cyclic quadrilateral and ∠A = 60°, then ∠C = ......", o: ["180°", "150°", "120°", "60°"], a: 2, e: "Opposite angles sum to 180°. 180 - 60 = 120.", d: "<strong>Cyclic Quadrilateral:</strong> Vertices lie on a circle." },
+            { q: "An exterior angle of a cyclic quadrilateral is ........... the opposite interior angle.", o: ["greater than", "less than", "equal to", "supplement of"], a: 2, e: "Property of cyclic quadrilaterals.", d: "<strong>Exterior Angle:</strong> Angle between side and extended adjacent side." },
+            { q: "Inscribed angle of a quadrant of a circle is:", o: ["45°", "90°", "145°", "130°"], a: 0, e: "Central angle is 90°. Inscribed is 90/2 = 45°.", d: "<strong>Quadrant Angle:</strong> 90 degrees." }
+        ],
+        unit11: [
+            { q: "Angle between tangent and radial segment of a circle is:", o: ["30°", "45°", "60°", "90°"], a: 3, e: "Tangent is perpendicular to radius.", d: "<strong>Perpendicular:</strong> Meeting at 90 degrees." },
+            { q: "Direct common tangents of equal circles are:", o: ["parallel", "intersecting", "converging", "not parallel"], a: 0, e: "For equal circles, direct tangents never meet.", d: "<strong>Common Tangent:</strong> Tangent to two circles." },
+            { q: "How many tangents can be drawn to two intersecting circles?", o: ["1", "2", "3", "infinite"], a: 1, e: "Two direct common tangents.", d: "<strong>Intersecting Circles:</strong> Circles cutting each other at two points." },
+            { q: "Two circles having radii 3cm and 3.2cm respectively, touch externally. The distance between centres of the circles is:", o: ["6cm", "0.2cm", "6.2cm", "5.3cm"], a: 2, e: "3 + 3.2 = 6.2 cm.", d: "<strong>Sum of Radii:</strong> Distance for external touch." },
+            { q: "Centres and point of contact of two touching circles are:", o: ["collinear", "non-collinear", "converging", "coincident"], a: 0, e: "They lie on the same straight line.", d: "<strong>Collinear:</strong> Lying on the same line." },
+            { q: "In which type of triangle, incentre and circumcenter are coincident?", o: ["scalene", "isosceles", "equilateral", "right triangle"], a: 2, e: "Due to perfect symmetry.", d: "<strong>Coincident:</strong> Occupying the same space." },
+            { q: "Two circles with radii 4cm and 4.8cm respectively, touch internally. The distance between centres of the circles is:", o: ["4cm", "8 cm", "8.8cm", "0.8cm"], a: 3, e: "4.8 - 4 = 0.8 cm.", d: "<strong>Difference of Radii:</strong> Distance for internal touch." },
+            { q: "Two tangents are drawn at the ends of diameter of a circle of radius 3.5cm. The distance between tangents is:", o: ["3.5cm", "7cm", "5cm", "10.5cm"], a: 1, e: "Distance = Diameter = 2 * 3.5 = 7 cm.", d: "<strong>Parallel Tangents:</strong> Tangents at diameter ends." },
+            { q: "Transverse common tangents intersect each other at:", o: ["1 point", "2 points", "3 points", "4 points"], a: 0, e: "They intersect on the line joining the centers.", d: "<strong>Transverse Tangent:</strong> Tangent crossing the line of centers." },
+            { q: "A circle is inscribed in a square having length of side 6cm. What is the radius", o: ["24", "12", "6", "3"], a: 3, e: "Diameter = Side = 6. Radius = 3.", d: "<strong>Inscribed Circle:</strong> Circle touching all sides." },
+            { q: "A square is inscribed in a circle of radius 5cm. What is the length of diagonal of the square?", o: ["2.5cm", "5cm", "10cm", "20cm"], a: 2, e: "Diagonal = Diameter = 2 * 5 = 10 cm.", d: "<strong>Circumscribed Circle:</strong> Circle passing through all vertices." },
+            { q: "Perpendicular bisectors of ............. always pass through centre of circle.", o: ["tangents", "secants", "radial segments", "chords"], a: 3, e: "Theorem of chords.", d: "<strong>Perpendicular Bisector:</strong> Line cutting segment in half at 90 degrees." },
+            { q: "How many circles can be drawn through three non-collinear points?", o: ["infinite", "1", "2", "3"], a: 1, e: "Unique circle theorem.", d: "<strong>Circumcircle:</strong> Unique circle through 3 points." },
+            { q: "A circle have ...... pair(s) of parallel tangents.", o: ["1", "2", "3", "infinite"], a: 3, e: "Every diameter has a pair of parallel tangents.", d: "<strong>Infinite:</strong> Limitless." }
+        ],
+        unit12: [
+            { q: "Which of the following is not measure of dispersion?", o: ["variance", "standard deviation", "range", "arithmetic mean"], a: 3, e: "Arithmetic mean is a measure of central tendency.", d: "<strong>Dispersion:</strong> Spread of data." },
+            { q: "What is median of the data 4, 3, 0, 2, 1?", o: ["0", "2", "3", "4"], a: 1, e: "Sort: 0, 1, 2, 3, 4. Middle value is 2.", d: "<strong>Median:</strong> Middle value of sorted data." },
+            { q: "Which of the following is measure of dispersion?", o: ["arithmetic mean", "range", "quartile", "median"], a: 1, e: "Range measures the spread (Max - Min).", d: "<strong>Range:</strong> Difference between largest and smallest values." },
+            { q: "Which of the following is used to compare the consistency of two data?", o: ["arithmetic mean", "standard deviation", "C.V.", "G.M"], a: 2, e: "Coefficient of Variation (C.V.) is relative dispersion.", d: "<strong>Consistency:</strong> Low variability." },
+            { q: "What is sum of deviations taken from arithmetic mean?", o: ["Σf", "Σx", "n", "0"], a: 3, e: "Σ(x - x̄) = 0.", d: "<strong>Deviation:</strong> Difference from mean." },
+            { q: "What is variance of five values 4, 4, 4, 4, 4?", o: ["does not exist", "4", "5", "0"], a: 3, e: "No variation means variance is 0.", d: "<strong>Variance:</strong> Average squared deviation." },
+            { q: "Which of the following divides the data into four equal parts?", o: ["decile", "quartile", "percentile", "median"], a: 1, e: "Quartiles divide data into 4 parts.", d: "<strong>Quartile:</strong> Q1, Q2, Q3." },
+            { q: "Which of the following divides the data into ten equal parts?", o: ["decile", "quartile", "percentile", "median"], a: 0, e: "Deciles divide data into 10 parts.", d: "<strong>Decile:</strong> D1 to D9." },
+            { q: "Which of the following divides the data into two equal parts?", o: ["decile", "quartile", "percentile", "median"], a: 3, e: "Median splits data in half.", d: "<strong>Central Tendency:</strong> Center of data distribution." },
+            { q: "Which of the following divides the data into hundred equal parts?", o: ["decile", "quartile", "percentile", "median"], a: 2, e: "Percentiles divide data into 100 parts.", d: "<strong>Percentile:</strong> P1 to P99." },
+            { q: "Line of best fit is given by the equation:", o: ["y = x²", "y = mx² + c", "y = mx + c", "x = y²"], a: 2, e: "Linear regression equation.", d: "<strong>Regression Line:</strong> Line minimizing squared errors." },
+            { q: "CV is given by the formula:", o: ["SD/100 × mean", "SD/range × 100", "mean/SD × 100", "100/mean × SD"], a: 3, e: "(Standard Deviation / Mean) * 100.", d: "<strong>Coefficient of Variation:</strong> Normalized measure of dispersion." },
+            { q: "Probability of drawing a king in one draw is ......... than probability of drawing 2 kings in 2 draws.", o: ["greater", "smaller", "equal", "no relation"], a: 0, e: "4/52 > (4/52)*(3/51).", d: "<strong>Probability:</strong> Chance of an event." },
+            { q: "Probability of drawing 2 aces in 2 draws with replacement is ........ than probability of drawing 2 jacks in 2 draws without replacement.", o: ["greater", "smaller", "equal", "no relation"], a: 0, e: "(1/13)² > (1/13)*(3/51).", d: "<strong>Replacement:</strong> Putting item back before next draw." },
+            { q: "Probability of rolling a standard cubical dice for an even number in 2 attempts is ........ than probability of rolling an odd numbers in 2 attempts.", o: ["greater", "smaller", "equal", "no relation"], a: 2, e: "Both have probability 0.5 per roll.", d: "<strong>Equally Likely:</strong> Same probability." }
+        ]
     }
 };
 
@@ -506,6 +689,20 @@ const chapterMetadata = {
         unit11: { icon: "🍋", title: "Unit 11", subtitle: "Carboxylic" },
         unit12: { icon: "🔗", title: "Unit 12", subtitle: "Polymers" },
         unit13: { icon: "🧬", title: "Unit 13", subtitle: "Biochemistry" }
+    },
+    maths: {
+        unit1: { icon: "ℂ", title: "Unit 1", subtitle: "Complex Numbers" },
+        unit2: { icon: "x²", title: "Unit 2", subtitle: "Quadratic Eq" },
+        unit3: { icon: "[]", title: "Unit 3", subtitle: "Matrices" },
+        unit4: { icon: "≤", title: "Unit 4", subtitle: "Inequalities" },
+        unit5: { icon: "➗", title: "Unit 5", subtitle: "Alg. Fractions" },
+        unit6: { icon: "📈", title: "Unit 6", subtitle: "Functions" },
+        unit7: { icon: "↗️", title: "Unit 7", subtitle: "Vectors" },
+        unit8: { icon: "📐", title: "Unit 8", subtitle: "Trigonometry" },
+        unit9: { icon: "⭕", title: "Unit 9", subtitle: "Chords & Arcs" },
+        unit10: { icon: "📏", title: "Unit 10", subtitle: "Tangents" },
+        unit11: { icon: "✏️", title: "Unit 11", subtitle: "Pract. Geometry" },
+        unit12: { icon: "📊", title: "Unit 12", subtitle: "Statistics" }
     }
 };
 
@@ -594,6 +791,7 @@ const btnStartMixedAll = document.getElementById('btn-start-mixed-all');
 const btnRetryTest = document.getElementById('btn-retry-test');
 const streakDisplay = document.getElementById('streak-display');
 const resultStreak = document.getElementById('result-streak');
+const resultPercentage = document.getElementById('result-percentage');
 const btnMultiSubNext = document.getElementById('btn-multi-sub-next');
 const btnMultiStartCount = document.getElementById('btn-multi-start-count');
 const btnMultiSpecific = document.getElementById('btn-multi-specific');
@@ -925,9 +1123,9 @@ function renderMultiSubjectSelection() {
     grid.innerHTML = '';
     selectedMultiSubjects = [];
     
-    const subjects = ['physics', 'computer', 'chemistry'];
-    const icons = { physics: '⚛️', computer: '💻', chemistry: '🧪' };
-    const titles = { physics: 'Physics', computer: 'Computer', chemistry: 'Chemistry' };
+    const subjects = ['physics', 'computer', 'chemistry', 'maths'];
+    const icons = { physics: '⚛️', computer: '💻', chemistry: '🧪', maths: '📐' };
+    const titles = { physics: 'Physics', computer: 'Computer', chemistry: 'Chemistry', maths: 'Maths' };
     
     subjects.forEach(sub => {
         const btn = document.createElement('button');
@@ -1368,6 +1566,7 @@ function showResult(isTimeUp = false) {
         // Hide review list for practice as it's redundant
         reviewList.innerHTML = '<p style="color:var(--text-muted)">Good job reviewing the material!</p>';
         if (resultStreak) resultStreak.classList.add('hidden');
+        if (resultPercentage) resultPercentage.style.display = 'none';
         return;
     }
 
@@ -1398,6 +1597,11 @@ function showResult(isTimeUp = false) {
     }, 300);
     
     const percentage = (score / currentQuestions.length) * 100;
+    if (resultPercentage) {
+        resultPercentage.textContent = `${Math.round(percentage)}%`;
+        resultPercentage.style.display = 'block';
+    }
+
     if (isTimeUp) resultMessage.textContent = "Time's Up! ⏰";
     else if (percentage >= 90) resultMessage.textContent = "Legendary! 🏆";
     else if (percentage >= 70) resultMessage.textContent = "Excellent Work! 🌟";
@@ -1459,6 +1663,7 @@ function downloadPDF() {
     const timeLabel = timerSettings.mode === 'goal' ? 'Time Left' : 'Time Taken';
     doc.text(`${timeLabel}: ${finalTimeStr}`, 150, 42);
     doc.text(`Score: ${score} / ${currentQuestions.length}`, 20, 49);
+    doc.text(`Percentage: ${Math.round((score / currentQuestions.length) * 100)}%`, 80, 49);
     if (selectedMode === 'test') doc.text(`Highest Streak: ${highestStreak}`, 150, 49);
     doc.text(`Date: ${new Date().toLocaleDateString()}`, 150, 35);
 

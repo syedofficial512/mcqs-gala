@@ -77,6 +77,13 @@
                         <p>Reactions & Matter</p>
                     </div>
                 </button>
+                <button class="menu-card maths" onclick="selectSubject('maths')">
+                    <div class="icon-box">📐</div>
+                    <div class="card-text">
+                        <h3>Maths</h3>
+                        <p>Numbers & Logic</p>
+                    </div>
+                </button>
                 <button class="menu-card multi" onclick="selectSubject('multi')">
                     <div class="icon-box">📚</div>
                     <div class="card-text">
@@ -284,6 +291,7 @@
                         <small id="total-q">/ 50</small>
                     </div>
                 </div>
+                <p id="result-percentage" class="result-percentage">0%</p>
                 <p id="result-message" class="result-msg">Result Pending</p>
                 <p id="result-time" style="color: var(--text-muted); margin-bottom: 20px;">Time Taken: 00:00</p>
                 <p id="result-streak" class="result-streak hidden">Highest Streak: 0 🔥</p>

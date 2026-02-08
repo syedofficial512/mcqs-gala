@@ -332,6 +332,14 @@ button {
     font-size: 1.1rem;
 }
 
+.result-percentage {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
 .counter { color: var(--text-muted); font-weight: 600; }
 
 .progress-track {
