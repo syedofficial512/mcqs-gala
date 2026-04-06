@@ -84,6 +84,13 @@
                         <p>Numbers & Logic</p>
                     </div>
                 </button>
+                <button class="menu-card english" onclick="selectSubject('english')">
+                    <div class="icon-box">🔤</div>
+                    <div class="card-text">
+                        <h3>English</h3>
+                        <p>Language & Arts</p>
+                    </div>
+                </button>
                 <button class="menu-card multi" onclick="selectSubject('multi')">
                     <div class="icon-box">📚</div>
                     <div class="card-text">
@@ -109,6 +116,25 @@
                 <button class="menu-card" onclick="selectMode('test')">
                     <div class="icon-box">📝</div>
                     <div class="card-text"><h3>Test</h3><p>Challenge Yourself</p></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Practice Type Screen (English Only) -->
+        <div id="practice-type-screen" class="screen hidden">
+            <header class="app-header">
+                <button class="btn-back" onclick="handleBack('practice-type')">←</button>
+                <h2>Select Activity</h2>
+                <p>Choose how you want to learn</p>
+            </header>
+            <div class="menu-grid">
+                <button class="menu-card" onclick="selectPracticeType('mcqs')">
+                    <div class="icon-box">❓</div>
+                    <div class="card-text"><h3>MCQs</h3><p>Test your knowledge</p></div>
+                </button>
+                <button class="menu-card" onclick="selectPracticeType('definitions')">
+                    <div class="icon-box">📖</div>
+                    <div class="card-text"><h3>Definitions</h3><p>Learn concepts & rules</p></div>
                 </button>
             </div>
         </div>
@@ -206,6 +232,20 @@
             </div>
             <div style="margin-top: 20px; width: 100%; max-width: 500px; text-align: center;">
                 <button id="btn-multi-battle-start" class="btn-primary" style="width:100%">Start Battle ⚔️</button>
+            </div>
+        </div>
+
+        <!-- Definitions Content Screen -->
+        <div id="definitions-screen" class="screen hidden">
+            <div class="glass-card result-card" style="max-width: 800px; text-align: left; max-height: 80vh; display: flex; flex-direction: column;">
+                <div style="flex-shrink: 0;">
+                    <button class="btn-back" onclick="handleBack('definitions')">←</button>
+                    <h2 id="def-header-title" style="margin-bottom: 5px;">Definitions</h2>
+                    <p id="def-header-subtitle" style="color:var(--text-muted); margin-bottom: 20px;">Topic Details</p>
+                </div>
+                <div id="definitions-container" class="review-section" style="flex-grow: 1; max-height: none;">
+                    <!-- Content injected via JS -->
+                </div>
             </div>
         </div>
 

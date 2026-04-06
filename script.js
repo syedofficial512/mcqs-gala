@@ -647,6 +647,520 @@ const db = {
             { q: "Probability of drawing 2 aces in 2 draws with replacement is ........ than probability of drawing 2 jacks in 2 draws without replacement.", o: ["greater", "smaller", "equal", "no relation"], a: 0, e: "(1/13)² > (1/13)*(3/51).", d: "<strong>Replacement:</strong> Putting item back before next draw." },
             { q: "Probability of rolling a standard cubical dice for an even number in 2 attempts is ........ than probability of rolling an odd numbers in 2 attempts.", o: ["greater", "smaller", "equal", "no relation"], a: 2, e: "Both have probability 0.5 per roll.", d: "<strong>Equally Likely:</strong> Same probability." }
         ]
+    },
+    english: {
+        unit1: [
+            { q: "Identify the part of speech for the word 'quickly' in the sentence: 'He runs quickly.'", o: ["Noun", "Verb", "Adjective", "Adverb"], a: 3, e: "An adverb modifies a verb, adjective, or another adverb. Here, 'quickly' modifies the verb 'runs'.", d: "<strong>Adverb:</strong> A word that modifies a verb, adjective, or other adverb." },
+            { q: "In the sentence 'She is a doctor', the word 'She' is a:", o: ["Noun", "Pronoun", "Adjective", "Conjunction"], a: 1, e: "'She' is used in place of a noun (the person's name), making it a pronoun.", d: "<strong>Pronoun:</strong> A word that substitutes for a noun or noun phrase." },
+            { q: "Which word is an adjective in the sentence: 'The beautiful flower bloomed.'?", o: ["The", "Beautiful", "Flower", "Bloomed"], a: 1, e: "'Beautiful' describes the noun 'flower'.", d: "<strong>Adjective:</strong> A word that describes or modifies a noun." },
+            { q: "Identify the conjunction: 'I wanted to go, but I was tired.'", o: ["Wanted", "To", "But", "Tired"], a: 2, e: "'But' connects two independent clauses.", d: "<strong>Conjunction:</strong> A word used to connect clauses or sentences." },
+            { q: "The word 'under' in 'The cat is under the table' is a:", o: ["Preposition", "Verb", "Noun", "Interjection"], a: 0, e: "'Under' shows the relationship between the cat and the table.", d: "<strong>Preposition:</strong> A word governing, and usually preceding, a noun or pronoun and expressing a relation to another word." },
+            { q: "Identify the interjection: 'Wow! That was amazing.'", o: ["That", "Was", "Wow", "Amazing"], a: 2, e: "'Wow' expresses strong emotion and is grammatically independent.", d: "<strong>Interjection:</strong> A word or phrase used to express strong emotion." },
+            { q: "'Honesty is the best policy.' The word 'Honesty' is a:", o: ["Common Noun", "Proper Noun", "Abstract Noun", "Collective Noun"], a: 2, e: "Honesty is an idea or quality, not a physical object.", d: "<strong>Abstract Noun:</strong> A noun denoting an idea, quality, or state." },
+            { q: "He drives *carefully*. The italicized word is:", o: ["Adjective", "Adverb", "Verb", "Noun"], a: 1, e: "It describes how he drives (verb modification).", d: "<strong>Adverb of Manner:</strong> Describes how an action is performed." },
+            { q: "This is *my* book. The word 'my' is functioning as:", o: ["Adjective", "Pronoun", "Verb", "Adverb"], a: 0, e: "Possessive adjectives (my, your, his) modify nouns to show ownership.", d: "<strong>Possessive Adjective:</strong> A word indicating ownership." },
+            { q: "I hurt *myself*. The word 'myself' is a:", o: ["Personal Pronoun", "Reflexive Pronoun", "Relative Pronoun", "Indefinite Pronoun"], a: 1, e: "Reflexive pronouns end in -self or -selves and refer back to the subject.", d: "<strong>Reflexive Pronoun:</strong> Used when the object is the same as the subject." }
+        ],
+        unit2: [
+            { q: "He succeeded ________ hard work.", o: ["because", "by dint of", "in spite", "instead"], a: 1, e: "'By dint of' is a compound preposition meaning 'by means of'.", d: "<strong>Compound Preposition:</strong> A preposition consisting of two or more words." },
+            { q: "The car is parked ________ the house.", o: ["in front of", "front", "because", "according"], a: 0, e: "'In front of' indicates location relative to the house.", d: "<strong>Location:</strong> A particular place or position." },
+            { q: "________ the rain, the match continued.", o: ["Because of", "In spite of", "According to", "Along with"], a: 1, e: "'In spite of' is used to show contrast or opposition.", d: "<strong>In spite of:</strong> Without being affected by the particular factor mentioned." },
+            { q: "He acted ________ the instructions given by his boss.", o: ["instead of", "in front of", "according to", "out of"], a: 2, e: "'According to' means as stated by or in agreement with.", d: "<strong>According to:</strong> As stated by." },
+            { q: "I would like tea ________ coffee.", o: ["instead of", "in case of", "by way of", "on behalf of"], a: 0, e: "'Instead of' implies a substitute or alternative.", d: "<strong>Instead of:</strong> As an alternative or substitute for." },
+            { q: "He came ________ his friends.", o: ["along with", "away from", "out of", "due to"], a: 0, e: "'Along with' means in company with or at the same time as.", d: "<strong>Along with:</strong> Together with." },
+            { q: "The shop is ________ the school.", o: ["close to", "because of", "in case of", "by way of"], a: 0, e: "'Close to' indicates proximity.", d: "<strong>Proximity:</strong> Nearness in space, time, or relationship." },
+            { q: "He resigned ________ ill health.", o: ["in front of", "because of", "away from", "instead of"], a: 1, e: "'Because of' indicates the reason.", d: "<strong>Cause:</strong> A person or thing that gives rise to an action, phenomenon, or condition." },
+            { q: "He spoke ________ the class.", o: ["on behalf of", "in front", "away from", "out of"], a: 0, e: "'On behalf of' means as a representative of.", d: "<strong>Representation:</strong> The action of speaking or acting on behalf of someone." },
+            { q: "Stay ________ the fire.", o: ["away from", "according to", "in case of", "by dint of"], a: 0, e: "'Away from' indicates maintaining distance.", d: "<strong>Distance:</strong> An amount of space between two things." }
+        ],
+        unit3: [
+            { q: "Identify the tense: 'She has been sleeping for two hours.'", o: ["Present Continuous", "Past Perfect", "Present Perfect Continuous", "Future Continuous"], a: 2, e: "Has/Have + been + verb-ing indicates Present Perfect Continuous.", d: "<strong>Present Perfect Continuous:</strong> Shows that something started in the past and is continuing at the present time." },
+            { q: "Which sentence is in the Future Perfect Tense?", o: ["I will go.", "I will be going.", "I will have gone.", "I went."], a: 2, e: "Will + have + past participle (gone) forms the Future Perfect.", d: "<strong>Future Perfect:</strong> An action that will be completed before some other point in the future." },
+            { q: "The sun ________ in the east.", o: ["rise", "rises", "rose", "rising"], a: 1, e: "Universal truths use the Present Indefinite tense.", d: "<strong>Present Indefinite:</strong> Used for facts, habits, and universal truths." },
+            { q: "He ________ cricket when it started to rain.", o: ["is playing", "played", "was playing", "has played"], a: 2, e: "Past Continuous (was playing) is used for an action in progress in the past when another event occurred.", d: "<strong>Past Continuous:</strong> Was/Were + verb-ing." },
+            { q: "They ________ before I arrived.", o: ["left", "have left", "had left", "leave"], a: 2, e: "Past Perfect (had left) is used for the earlier of two past actions.", d: "<strong>Past Perfect:</strong> Had + past participle." },
+            { q: "I ________ a letter yesterday.", o: ["write", "wrote", "written", "have written"], a: 1, e: "Specific past time ('yesterday') requires Past Indefinite (Simple Past).", d: "<strong>Past Indefinite:</strong> Used for completed actions in the past." },
+            { q: "I ________ for you at the station.", o: ["will be waiting", "will wait", "waited", "have waited"], a: 0, e: "Future Continuous indicates an action that will be in progress at a future time.", d: "<strong>Future Continuous:</strong> Will be + verb-ing." },
+            { q: "I ________ my work just now.", o: ["finish", "finished", "have finished", "had finished"], a: 2, e: "'Just now' often indicates Present Perfect.", d: "<strong>Present Perfect:</strong> Has/Have + past participle." },
+            { q: "It ________ since morning.", o: ["rained", "is raining", "has been raining", "was raining"], a: 2, e: "'Since' indicates the duration of an action starting in the past and continuing.", d: "<strong>Since/For:</strong> Used with Perfect Continuous tenses." },
+            { q: "He ________ to school tomorrow.", o: ["go", "went", "will go", "gone"], a: 2, e: "Future action requires Future Indefinite.", d: "<strong>Future Indefinite:</strong> Will/Shall + base verb." }
+        ],
+        unit4: [
+            { q: "Identify the phrase in italics: 'The boy *with the blue cap* is my brother.'", o: ["Noun Phrase", "Adjective Phrase", "Adverb Phrase", "Verb Phrase"], a: 1, e: "The phrase describes the noun 'boy', acting as an adjective.", d: "<strong>Adjective Phrase:</strong> A group of words describing a noun or pronoun." },
+            { q: "'*To err* is human.' The italicized part is a:", o: ["Gerund Phrase", "Infinitive Phrase", "Prepositional Phrase", "Noun Phrase"], a: 1, e: "'To err' is an infinitive acting as the subject.", d: "<strong>Infinitive Phrase:</strong> Begins with 'to' followed by a verb." },
+            { q: "He ran *with great speed*.", o: ["Noun Phrase", "Adjective Phrase", "Adverb Phrase", "Conjunction Phrase"], a: 2, e: "It modifies the verb 'ran', telling how he ran.", d: "<strong>Adverb Phrase:</strong> A group of words that functions as an adverb." },
+            { q: "'*The big black dog* barked loudly.'", o: ["Noun Phrase", "Verb Phrase", "Prepositional Phrase", "Adverb Phrase"], a: 0, e: "The group of words functions as the subject (Noun).", d: "<strong>Noun Phrase:</strong> A word or group of words containing a noun and functioning in a sentence as subject, object, or prepositional object." },
+            { q: "The cat is *under the table*.", o: ["Noun Phrase", "Verb Phrase", "Prepositional Phrase", "Gerund Phrase"], a: 2, e: "It begins with a preposition 'under'.", d: "<strong>Prepositional Phrase:</strong> A modifying phrase consisting of a preposition and its object." },
+            { q: "He likes *reading books*.", o: ["Infinitive Phrase", "Gerund Phrase", "Prepositional Phrase", "Adverb Phrase"], a: 1, e: "'Reading' is a gerund (verb acting as noun), making this a Gerund Phrase.", d: "<strong>Gerund Phrase:</strong> Begins with a gerund (verb+ing)." },
+            { q: "She *was writing* a letter.", o: ["Noun Phrase", "Verb Phrase", "Adjective Phrase", "Adverb Phrase"], a: 1, e: "It consists of the main verb and its auxiliaries.", d: "<strong>Verb Phrase:</strong> The part of a sentence containing the verb and any direct or indirect object, but not the subject." },
+            { q: "My brother, *a doctor*, is here.", o: ["Appositive Phrase", "Adverb Phrase", "Verb Phrase", "Prepositional Phrase"], a: 0, e: "An appositive renames the noun right beside it.", d: "<strong>Appositive Phrase:</strong> A noun or noun phrase that renames another noun right beside it." },
+            { q: "The girl *in the red dress* is my sister.", o: ["Adverb Phrase", "Adjective Phrase", "Verb Phrase", "Noun Phrase"], a: 1, e: "It modifies the noun 'girl'.", d: "<strong>Adjective Phrase:</strong> Functions like an adjective." },
+            { q: "He spoke *in a polite manner*.", o: ["Noun Phrase", "Adjective Phrase", "Adverb Phrase", "Verb Phrase"], a: 2, e: "It describes how he spoke.", d: "<strong>Adverb Phrase:</strong> Functions like an adverb." }
+        ],
+        unit5: [
+            { q: "What is the denotation of the word 'Snake'?", o: ["Evil", "Danger", "A legless reptile", "Deceit"], a: 2, e: "Denotation is the literal, dictionary definition.", d: "<strong>Denotation:</strong> The literal or primary meaning of a word." },
+            { q: "Which word has a more positive connotation?", o: ["Cheap", "Inexpensive", "Stingy", "Miserly"], a: 1, e: "'Inexpensive' implies good value, while 'cheap' can imply poor quality.", d: "<strong>Connotation:</strong> An idea or feeling that a word invokes in addition to its literal or primary meaning." },
+            { q: "The word 'Home' connotes:", o: ["A building", "Shelter", "Warmth and family", "Bricks and cement"], a: 2, e: "'Home' carries emotional associations of comfort and family, unlike 'House'.", d: "<strong>Connotation vs Denotation:</strong> Emotional vs Literal meaning." },
+            { q: "Which word suggests a more youthful and energetic quality?", o: ["Childish", "Childlike", "Immature", "Juvenile"], a: 1, e: "'Childlike' often implies innocence and wonder, whereas 'Childish' implies immaturity.", d: "<strong>Nuance:</strong> A subtle difference in or shade of meaning." },
+            { q: "A 'dove' is literally a bird, but connotatively it represents:", o: ["War", "Peace", "Hunger", "Speed"], a: 1, e: "The dove is a universal symbol for peace.", d: "<strong>Symbolism:</strong> The use of symbols to represent ideas or qualities." },
+            { q: "Which word has a negative connotation?", o: ["Assertive", "Confident", "Pushy", "Decisive"], a: 2, e: "'Pushy' implies being overly aggressive, whereas the others are generally positive.", d: "<strong>Negative Connotation:</strong> Unfavorable emotional association." },
+            { q: "The word 'Stench' implies a smell that is:", o: ["Pleasant", "Neutral", "Unpleasant", "Sweet"], a: 2, e: "'Stench' refers to a strong and very unpleasant smell, unlike 'Aroma'.", d: "<strong>Synonyms:</strong> Words with similar meanings but different connotations." },
+            { q: "Blue literally means a color. Connotatively, it can mean:", o: ["Happy", "Sad", "Angry", "Excited"], a: 1, e: "'Feeling blue' is an idiom for feeling sad.", d: "<strong>Idiom:</strong> A phrase where the meaning isn't deducible from the individual words." },
+            { q: "Calling someone a 'Fox' connotatively suggests they are:", o: ["Fast", "Cunning", "Strong", "Lazy"], a: 1, e: "Foxes are traditionally associated with slyness and cunning.", d: "<strong>Cultural Association:</strong> Meanings attached to words by culture." },
+            { q: "Which word is more positive?", o: ["Weird", "Unique", "Bizarre", "Odd"], a: 1, e: "'Unique' implies special and one-of-a-kind, while others can imply strangeness.", d: "<strong>Positive Connotation:</strong> Favorable emotional association." }
+        ],
+        unit6: [
+            { q: "'He is as brave as a lion.' This is an example of:", o: ["Metaphor", "Simile", "Personification", "Hyperbole"], a: 1, e: "A simile compares two things using 'like' or 'as'.", d: "<strong>Simile:</strong> A figure of speech involving the comparison of one thing with another thing of a different kind." },
+            { q: "'The camel is the ship of the desert.' This is a:", o: ["Simile", "Metaphor", "Personification", "Alliteration"], a: 1, e: "A metaphor asserts that one thing is another thing for rhetorical effect.", d: "<strong>Metaphor:</strong> A figure of speech in which a word or phrase is applied to an object or action to which it is not literally applicable." },
+            { q: "'The wind whispered through the trees.' This uses:", o: ["Metaphor", "Simile", "Personification", "Hyperbole"], a: 2, e: "Giving human qualities (whispering) to inanimate objects (wind).", d: "<strong>Personification:</strong> The attribution of a personal nature or human characteristics to something nonhuman." },
+            { q: "'I have told you a million times.' This is:", o: ["Understatement", "Hyperbole", "Irony", "Oxymoron"], a: 1, e: "Exaggeration for emphasis.", d: "<strong>Hyperbole:</strong> Exaggerated statements or claims not meant to be taken literally." },
+            { q: "'The buzzing bee flew away.' The word 'buzzing' is an example of:", o: ["Metaphor", "Simile", "Onomatopoeia", "Irony"], a: 2, e: "Words that imitate the sound they describe.", d: "<strong>Onomatopoeia:</strong> The formation of a word from a sound associated with what is named." },
+            { q: "'She sells sea shells by the sea shore.' This is:", o: ["Alliteration", "Simile", "Metaphor", "Irony"], a: 0, e: "Repetition of the initial consonant sound 's'.", d: "<strong>Alliteration:</strong> The occurrence of the same letter or sound at the beginning of adjacent or closely connected words." },
+            { q: "'Deafening silence' is an example of:", o: ["Simile", "Oxymoron", "Metaphor", "Personification"], a: 1, e: "Two contradictory terms appearing side by side.", d: "<strong>Oxymoron:</strong> A figure of speech in which apparently contradictory terms appear in conjunction." },
+            { q: "A fire station burning down is an example of:", o: ["Simile", "Irony", "Metaphor", "Hyperbole"], a: 1, e: "Situational irony where the outcome is contrary to what was expected.", d: "<strong>Irony:</strong> The expression of one's meaning by using language that normally signifies the opposite." },
+            { q: "Using 'passed away' instead of 'died' is a:", o: ["Euphemism", "Metaphor", "Simile", "Hyperbole"], a: 0, e: "A mild or indirect word substituted for one considered to be too harsh.", d: "<strong>Euphemism:</strong> A polite expression used in place of words or phrases that otherwise might be considered harsh or unpleasant." },
+            { q: "'All hands on deck.' (Hands representing people) is:", o: ["Synecdoche", "Simile", "Personification", "Irony"], a: 0, e: "A part is made to represent the whole.", d: "<strong>Synecdoche:</strong> A figure of speech in which a part is made to represent the whole or vice versa." }
+        ],
+        unit7: [
+            { q: "Change to Indirect Speech: He said, 'I am busy.'", o: ["He said that he is busy.", "He said that he was busy.", "He says that he was busy.", "He asked if he was busy."], a: 1, e: "Present tense changes to past tense in indirect speech when the reporting verb is in the past.", d: "<strong>Indirect Speech:</strong> Expressing the content of statements without quoting them explicitly." },
+            { q: "Change to Indirect Speech: She said, 'Will you help me?'", o: ["She said if I would help her.", "She asked if I would help her.", "She asked that I help her.", "She told me to help her."], a: 1, e: "For questions, 'said' changes to 'asked' and 'if/whether' is used.", d: "<strong>Reporting Questions:</strong> Use 'asked' and 'if' or 'whether'." },
+            { q: "Change to Indirect Speech: He said, 'Hurrah! We won.'", o: ["He said that they won.", "He exclaimed with joy that they had won.", "He shouted that we won.", "He exclaimed that they win."], a: 1, e: "Exclamations are reported using 'exclaimed with joy/sorrow'. Past simple changes to Past Perfect.", d: "<strong>Exclamatory Sentences:</strong> Sentences expressing strong emotion." },
+            { q: "Change to Indirect Speech: The teacher said, 'The earth is round.'", o: ["The teacher said that the earth was round.", "The teacher said that the earth is round.", "The teacher told that the earth is round.", "The teacher asked if the earth is round."], a: 1, e: "Universal truths do not change tense in indirect speech.", d: "<strong>Universal Truth:</strong> A fact that is always true." },
+            { q: "Change to Indirect Speech: He said to me, 'Go away.'", o: ["He said to me go away.", "He ordered me to go away.", "He requested me to go away.", "He asked me go away."], a: 1, e: "Imperative sentences use 'ordered', 'requested', etc., followed by 'to'.", d: "<strong>Imperative Sentence:</strong> A sentence that gives a command or request." },
+            { q: "Change to Indirect Speech: He said, 'I like coffee.'", o: ["He said that he likes coffee.", "He said that he liked coffee.", "He says that he liked coffee.", "He asked if he liked coffee."], a: 1, e: "Simple Present 'like' changes to Simple Past 'liked'.", d: "<strong>Tense Change:</strong> Present -> Past." },
+            { q: "Change to Indirect Speech: She said, 'I am writing.'", o: ["She said that she is writing.", "She said that she was writing.", "She said that I was writing.", "She told that she is writing."], a: 1, e: "Present Continuous changes to Past Continuous.", d: "<strong>Continuous Tense:</strong> Am/Is/Are -> Was/Were." },
+            { q: "Change to Indirect Speech: He said, 'Where are you going?'", o: ["He asked where I was going.", "He asked where was I going.", "He said where I was going.", "He asked where are you going."], a: 0, e: "In questions, the subject comes before the verb in indirect speech (statement order).", d: "<strong>Question Word Order:</strong> Wh-word + Subject + Verb." },
+            { q: "Change to Indirect Speech: She said, 'Please wait.'", o: ["She ordered me to wait.", "She requested me to wait.", "She said to please wait.", "She asked me wait."], a: 1, e: "'Please' indicates a request.", d: "<strong>Request:</strong> Use 'requested' + to-infinitive." },
+            { q: "Change to Indirect Speech: He said, 'I have finished.'", o: ["He said that he has finished.", "He said that he had finished.", "He said that he finished.", "He says that he had finished."], a: 1, e: "Present Perfect changes to Past Perfect.", d: "<strong>Perfect Tense:</strong> Has/Have -> Had." }
+        ],
+        unit8: [
+            { q: "I was sick; ________, I did not go to work.", o: ["however", "therefore", "but", "because"], a: 1, e: "'Therefore' shows a result or consequence.", d: "<strong>Transitional Device:</strong> Words or phrases that connect ideas." },
+            { q: "He is rich; ________, he is unhappy.", o: ["therefore", "however", "so", "and"], a: 1, e: "'However' introduces a contrast.", d: "<strong>Contrast:</strong> The state of being strikingly different from something else." },
+            { q: "We need to buy ingredients. ________, we need flour and sugar.", o: ["However", "For example", "In conclusion", "But"], a: 1, e: "'For example' introduces an illustration or specific instance.", d: "<strong>Illustration:</strong> An example serving to clarify or prove something." },
+            { q: "________, I would like to thank everyone for coming.", o: ["First", "In conclusion", "However", "For example"], a: 1, e: "'In conclusion' is used to summarize or end a speech/text.", d: "<strong>Conclusion:</strong> The end or finish of an event or process." },
+            { q: "He is intelligent. ________, he is hardworking.", o: ["In addition", "But", "Therefore", "However"], a: 0, e: "'In addition' adds more information.", d: "<strong>Addition:</strong> The action or process of adding something to something else." },
+            { q: "The cost is high. ________, the quality is poor.", o: ["Similarly", "Consequently", "However", "For example"], a: 0, e: "'Similarly' introduces a comparison or parallel point.", d: "<strong>Comparison:</strong> Pointing out similarities." },
+            { q: "He didn't study. ________, he failed the test.", o: ["However", "Consequently", "In addition", "On the other hand"], a: 1, e: "'Consequently' indicates a result.", d: "<strong>Consequence:</strong> A result or effect of an action or condition." },
+            { q: "The car is fast. ________, it consumes a lot of fuel.", o: ["Therefore", "On the other hand", "Similarly", "For example"], a: 1, e: "'On the other hand' introduces a contrasting point.", d: "<strong>Contrast:</strong> Difference between things." },
+            { q: "It is raining. ________, it is cold.", o: ["However", "Furthermore", "In conclusion", "For example"], a: 1, e: "'Furthermore' adds another point to the argument.", d: "<strong>Elaboration:</strong> Adding more detail." },
+            { q: "I was reading. ________, he was cooking.", o: ["Therefore", "Meanwhile", "In conclusion", "For example"], a: 1, e: "'Meanwhile' indicates two events happening at the same time.", d: "<strong>Time:</strong> When something happens." }
+        ],
+        unit9: [
+            { q: "You ________ obey your parents.", o: ["can", "should", "might", "could"], a: 1, e: "'Should' is used to give advice or express duty.", d: "<strong>Should:</strong> Used to indicate obligation, duty, or correctness." },
+            { q: "________ I come in, sir?", o: ["May", "Can", "Must", "Will"], a: 0, e: "'May' is the most polite form for asking permission.", d: "<strong>Permission:</strong> The action of officially allowing someone to do a particular thing." },
+            { q: "It ________ rain today; the sky is cloudy.", o: ["must", "might", "should", "can"], a: 1, e: "'Might' expresses possibility.", d: "<strong>Possibility:</strong> A thing that may happen or be the case." },
+            { q: "I ________ swim when I was five.", o: ["can", "could", "may", "might"], a: 1, e: "'Could' is used for past ability.", d: "<strong>Past Ability:</strong> Ability one had in the past." },
+            { q: "You ________ not smoke in the hospital.", o: ["must", "should", "can", "may"], a: 0, e: "'Must not' indicates prohibition.", d: "<strong>Prohibition:</strong> The action of forbidding something." },
+            { q: "________ you please help me?", o: ["Should", "Must", "Could", "May"], a: 2, e: "'Could' or 'Would' is used for polite requests.", d: "<strong>Request:</strong> An act of asking politely or formally for something." },
+            { q: "He ________ be at home; the lights are on.", o: ["can", "must", "should", "might"], a: 1, e: "'Must' is used for logical deduction or strong probability.", d: "<strong>Deduction:</strong> Arriving at a conclusion by reasoning." },
+            { q: "You ________ not worry about the cost.", o: ["need", "must", "should", "can"], a: 0, e: "'Need not' indicates lack of necessity.", d: "<strong>Necessity:</strong> The fact of being required or indispensable." },
+            { q: "I ________ lift this heavy box.", o: ["can", "may", "might", "should"], a: 0, e: "'Can' expresses ability.", d: "<strong>Ability:</strong> Possession of the means or skill to do something." },
+            { q: "We ________ to respect our elders.", o: ["should", "must", "ought", "can"], a: 2, e: "'Ought to' is used for moral obligation.", d: "<strong>Ought to:</strong> Used to indicate duty or correctness." }
+        ]
+    }
+};
+
+const definitionsDB = {
+    english: {
+        unit1: {
+            title: "Parts of Speech",
+            content: [
+                {
+                    title: "Noun",
+                    def: "A Noun is the name of a person, place, animal, or thing.",
+                    examples: ["Ali is a good boy.", "Karachi is the city of lights.", "The book is on the table."]
+                },
+                {
+                    title: "Pronoun",
+                    def: "A Pronoun is a word used in place of a noun to avoid repetition.",
+                    examples: ["He is playing cricket.", "She is cooking food.", "They are going to school."]
+                },
+                {
+                    title: "Verb",
+                    def: "A Verb is a word that shows an action, state, or occurrence.",
+                    examples: ["She eats an apple.", "He runs very fast.", "They are sleeping."]
+                },
+                {
+                    title: "Adjective",
+                    def: "An Adjective is a word that describes or modifies a noun or pronoun.",
+                    examples: ["He is a brave boy.", "She has a red car.", "The tea is hot."]
+                },
+                {
+                    title: "Adverb",
+                    def: "An Adverb is a word that modifies a verb, an adjective, or another adverb.",
+                    examples: ["He runs quickly.", "She speaks very softly.", "He is quite happy."]
+                },
+                {
+                    title: "Preposition",
+                    def: "A Preposition is a word used before a noun or pronoun to show direction, time, place, or location.",
+                    examples: ["The book is on the table.", "He is in the room.", "She goes to school."]
+                },
+                {
+                    title: "Conjunction",
+                    def: "A Conjunction is a word used to connect clauses or sentences or to coordinate words in the same clause.",
+                    examples: ["Ali and Ahmed are friends.", "He is poor but honest.", "Work hard or you will fail."]
+                },
+                {
+                    title: "Interjection",
+                    def: "An Interjection is a word or phrase used to express strong emotion or surprise.",
+                    examples: ["Hurrah! We won the match.", "Alas! He is dead.", "Wow! What a beautiful car."]
+                }
+            ]
+        },
+        unit2: {
+            title: "Compound Prepositions",
+            content: [
+                {
+                    title: "Definition",
+                    def: "A compound preposition is a preposition that consists of two or more words functioning as a single unit.",
+                    examples: ["According to", "Along with", "Because of", "In front of", "In spite of", "Instead of"]
+                },
+                {
+                    title: "Common Examples",
+                    def: "Usage in sentences:",
+                    examples: [
+                        "He succeeded by dint of hard work.",
+                        "The car is parked in front of the house.",
+                        "He resigned because of ill health.",
+                        "I would like tea instead of coffee."
+                    ]
+                }
+            ]
+        },
+        unit3: {
+            title: "Tenses",
+            content: [
+                {
+                    title: "Present Indefinite Tense",
+                    def: "Used for habitual actions, universal truths, and daily routines.",
+                    structure: [
+                        "Simple: Subject + 1st Form of Verb (s/es) + Object",
+                        "Negative: Subject + Do/Does + Not + 1st Form + Object",
+                        "Interrogative: Do/Does + Subject + 1st Form + Object?"
+                    ],
+                    helpers: "Does: He, She, It, Singular Name. Do: I, We, You, They, Plural.",
+                    examples: ["He goes to school.", "He does not go to school.", "Does he go to school?"]
+                },
+                {
+                    title: "Present Continuous Tense",
+                    def: "Used for actions happening right now.",
+                    structure: [
+                        "Simple: Subject + is/am/are + 1st Form + ing + Object",
+                        "Negative: Subject + is/am/are + Not + 1st Form + ing + Object",
+                        "Interrogative: Is/Am/Are + Subject + 1st Form + ing + Object?"
+                    ],
+                    helpers: "Is: Singular (He, She, It). Am: I. Are: Plural (We, You, They).",
+                    examples: ["I am writing a letter.", "She is not cooking.", "Are they playing?"]
+                },
+                {
+                    title: "Present Perfect Tense",
+                    def: "Used for actions just completed or with relevance to the present.",
+                    structure: [
+                        "Simple: Subject + Has/Have + 3rd Form + Object",
+                        "Negative: Subject + Has/Have + Not + 3rd Form + Object",
+                        "Interrogative: Has/Have + Subject + 3rd Form + Object?"
+                    ],
+                    helpers: "Has: Singular (He, She, It). Have: I, We, You, They, Plural.",
+                    examples: ["He has finished his work.", "They have not eaten.", "Has she gone?"]
+                },
+                {
+                    title: "Present Perfect Continuous Tense",
+                    def: "Used for actions started in the past and continuing now.",
+                    structure: [
+                        "Simple: Subject + Has/Have + been + 1st Form + ing + Object + Since/For",
+                        "Negative: Subject + Has/Have + Not + been + ...",
+                        "Interrogative: Has/Have + Subject + been + ...?"
+                    ],
+                    helpers: "Since: Point of time (morning, 1990). For: Period of time (2 hours).",
+                    examples: ["It has been raining since morning.", "I have been waiting for 2 hours."]
+                },
+                {
+                    title: "Past Indefinite Tense",
+                    def: "Used for actions completed in the past.",
+                    structure: [
+                        "Simple: Subject + 2nd Form of Verb + Object",
+                        "Negative: Subject + Did + Not + 1st Form + Object",
+                        "Interrogative: Did + Subject + 1st Form + Object?"
+                    ],
+                    helpers: "Did is used with all subjects in Negative/Interrogative.",
+                    examples: ["He went to Lahore.", "He did not go to Lahore.", "Did he go to Lahore?"]
+                },
+                {
+                    title: "Past Continuous Tense",
+                    def: "Used for actions continuing at a specific time in the past.",
+                    structure: [
+                        "Simple: Subject + Was/Were + 1st Form + ing + Object",
+                        "Negative: Subject + Was/Were + Not + 1st Form + ing + Object",
+                        "Interrogative: Was/Were + Subject + 1st Form + ing + Object?"
+                    ],
+                    helpers: "Was: Singular (I, He, She, It). Were: Plural (We, You, They).",
+                    examples: ["He was playing cricket.", "They were not sleeping.", "Was she reading?"]
+                },
+                {
+                    title: "Past Perfect Tense",
+                    def: "Used for actions completed before another action in the past.",
+                    structure: [
+                        "Simple: Subject + Had + 3rd Form + Object",
+                        "Negative: Subject + Had + Not + 3rd Form + Object",
+                        "Interrogative: Had + Subject + 3rd Form + Object?"
+                    ],
+                    helpers: "Had is used with all subjects.",
+                    examples: ["The train had left before I reached.", "He had not finished."]
+                },
+                {
+                    title: "Past Perfect Continuous Tense",
+                    def: "Used for actions continuing for a duration in the past.",
+                    structure: [
+                        "Simple: Subject + Had + been + 1st Form + ing + Object + Since/For"
+                    ],
+                    helpers: "Had been is used with all subjects.",
+                    examples: ["He had been working since morning."]
+                },
+                {
+                    title: "Future Indefinite Tense",
+                    def: "Used for actions that will happen in the future.",
+                    structure: [
+                        "Simple: Subject + Will/Shall + 1st Form + Object",
+                        "Negative: Subject + Will/Shall + Not + 1st Form + Object",
+                        "Interrogative: Will/Shall + Subject + 1st Form + Object?"
+                    ],
+                    helpers: "Will: All subjects (modern usage). Shall: I, We (traditional).",
+                    examples: ["I will go tomorrow.", "He will not come.", "Will you help me?"]
+                },
+                {
+                    title: "Future Continuous Tense",
+                    def: "Used for actions that will be in progress in the future.",
+                    structure: [
+                        "Simple: Subject + Will be + 1st Form + ing + Object",
+                        "Negative: Subject + Will + Not + be + 1st Form + ing + Object",
+                        "Interrogative: Will + Subject + be + 1st Form + ing + Object?"
+                    ],
+                    helpers: "Will be is used with all subjects.",
+                    examples: ["He will be sleeping.", "I will be waiting for you."]
+                },
+                {
+                    title: "Future Perfect Tense",
+                    def: "Used for actions that will be completed by a certain time in the future.",
+                    structure: [
+                        "Simple: Subject + Will have + 3rd Form + Object"
+                    ],
+                    helpers: "Will have is used with all subjects.",
+                    examples: ["I will have finished by 5 PM."]
+                },
+                {
+                    title: "Future Perfect Continuous Tense",
+                    def: "Used for actions continuing up to a point in the future.",
+                    structure: [
+                        "Simple: Subject + Will have been + 1st Form + ing + Object + Since/For"
+                    ],
+                    helpers: "Will have been is used with all subjects.",
+                    examples: ["By next year, I will have been living here for 10 years."]
+                }
+            ]
+        },
+        unit4: {
+            title: "Phrases",
+            content: [
+                {
+                    title: "Noun Phrase",
+                    def: "A group of words that functions as a noun (Subject/Object).",
+                    examples: ["*The big black dog* barked.", "I like *reading books*."]
+                },
+                {
+                    title: "Adjective Phrase",
+                    def: "A group of words that functions as an adjective (describes a noun).",
+                    examples: ["The boy *with the blue cap* is my brother.", "She is a lady *of great wealth*."]
+                },
+                {
+                    title: "Adverb Phrase",
+                    def: "A group of words that functions as an adverb (modifies a verb).",
+                    examples: ["He ran *with great speed*.", "She spoke *in a polite manner*."]
+                },
+                {
+                    title: "Prepositional Phrase",
+                    def: "Begins with a preposition and ends with a noun/pronoun.",
+                    examples: ["The cat is *under the table*.", "He is *in the room*."]
+                },
+                {
+                    title: "Infinitive Phrase",
+                    def: "Begins with 'to' + verb.",
+                    examples: ["*To err* is human.", "I like *to swim*."]
+                },
+                {
+                    title: "Gerund Phrase",
+                    def: "Begins with a gerund (verb+ing) acting as a noun.",
+                    examples: ["*Smoking cigarettes* is bad for health.", "He enjoys *playing cricket*."]
+                }
+            ]
+        },
+        unit5: {
+            title: "Connotation & Denotation",
+            content: [
+                {
+                    title: "Denotation",
+                    def: "The literal, dictionary definition of a word.",
+                    examples: ["Snake: A legless reptile.", "Home: A place where one lives."]
+                },
+                {
+                    title: "Connotation",
+                    def: "The emotional or cultural association with a word.",
+                    examples: ["Snake: Danger, evil, or deceit.", "Home: Warmth, family, comfort."]
+                },
+                {
+                    title: "Positive vs Negative",
+                    def: "Words can have similar meanings but different feelings.",
+                    examples: [
+                        "Positive: Inexpensive, Unique, Confident.",
+                        "Negative: Cheap, Weird, Pushy."
+                    ]
+                }
+            ]
+        },
+        unit6: {
+            title: "Figures of Speech",
+            content: [
+                {
+                    title: "Simile",
+                    def: "Comparison using 'like' or 'as'.",
+                    examples: ["He is as brave as a lion.", "She swims like a fish."]
+                },
+                {
+                    title: "Metaphor",
+                    def: "Direct comparison without 'like' or 'as'.",
+                    examples: ["The camel is the ship of the desert.", "Life is a rollercoaster."]
+                },
+                {
+                    title: "Personification",
+                    def: "Giving human qualities to inanimate objects.",
+                    examples: ["The wind whispered.", "The flowers danced."]
+                },
+                {
+                    title: "Hyperbole",
+                    def: "Exaggeration for emphasis.",
+                    examples: ["I have told you a million times.", "I am so hungry I could eat a horse."]
+                },
+                {
+                    title: "Alliteration",
+                    def: "Repetition of initial consonant sounds.",
+                    examples: ["She sells sea shells.", "Busy bees buzz."]
+                },
+                {
+                    title: "Onomatopoeia",
+                    def: "Words that imitate sounds.",
+                    examples: ["Buzz", "Hiss", "Bang", "Crash"]
+                }
+            ]
+        },
+        unit7: {
+            title: "Direct & Indirect Speech",
+            content: [
+                {
+                    title: "General Rules",
+                    def: "Indirect speech reports what someone said without using their exact words.",
+                    structure: [
+                        "1. Remove inverted commas.",
+                        "2. Change reporting verb (Said to -> Told, Asked, etc.).",
+                        "3. Change pronouns (I -> He/She).",
+                        "4. Change tense (Present -> Past)."
+                    ],
+                    examples: ["Direct: He said, 'I am busy.'", "Indirect: He said that he was busy."]
+                },
+                {
+                    title: "Tense Changes",
+                    def: "If reporting verb is in Past, tenses change:",
+                    structure: [
+                        "Present Indefinite -> Past Indefinite",
+                        "Present Continuous -> Past Continuous",
+                        "Present Perfect -> Past Perfect",
+                        "Past Indefinite -> Past Perfect",
+                        "Will -> Would, Can -> Could"
+                    ],
+                    examples: ["Direct: She said, 'I like apples.'", "Indirect: She said that she liked apples."]
+                },
+                {
+                    title: "Interrogative Sentences (Questions)",
+                    def: "Questions are changed into statements.",
+                    structure: [
+                        "Reporting verb: Asked / Enquired.",
+                        "Connective: If / Whether (for Yes/No questions).",
+                        "Connective: Same Wh-word (for Wh-questions).",
+                        "Subject comes before Verb."
+                    ],
+                    examples: [
+                        "Direct: He said, 'Are you happy?' -> Indirect: He asked if I was happy.",
+                        "Direct: He said, 'Where do you live?' -> Indirect: He asked where I lived."
+                    ]
+                },
+                {
+                    title: "Imperative Sentences (Commands/Requests)",
+                    def: "Used for orders, requests, advice.",
+                    structure: [
+                        "Reporting verb: Ordered, Requested, Advised, Forbade.",
+                        "Connective: To (or Not to).",
+                        "Tense remains infinitive."
+                    ],
+                    examples: [
+                        "Direct: He said, 'Open the door.' -> Indirect: He ordered to open the door.",
+                        "Direct: She said, 'Please help me.' -> Indirect: She requested to help her."
+                    ]
+                }
+            ]
+        },
+        unit8: {
+            title: "Transitional Devices",
+            content: [
+                {
+                    title: "Addition",
+                    def: "Adding information.",
+                    examples: ["And, Also, Furthermore, Moreover, In addition."]
+                },
+                {
+                    title: "Contrast",
+                    def: "Showing difference.",
+                    examples: ["But, However, On the other hand, Yet, Although."]
+                },
+                {
+                    title: "Cause & Effect",
+                    def: "Showing results.",
+                    examples: ["Therefore, Consequently, Because, Thus, As a result."]
+                },
+                {
+                    title: "Sequence/Time",
+                    def: "Showing order.",
+                    examples: ["First, Next, Then, Finally, Meanwhile."]
+                },
+                {
+                    title: "Illustration",
+                    def: "Giving examples.",
+                    examples: ["For example, For instance, Such as."]
+                }
+            ]
+        },
+        unit9: {
+            title: "Modal Verbs",
+            content: [
+                {
+                    title: "Can / Could",
+                    def: "Ability, Possibility, Request.",
+                    examples: ["I can swim (Ability).", "Could you help me? (Polite Request)."]
+                },
+                {
+                    title: "May / Might",
+                    def: "Permission, Possibility.",
+                    examples: ["May I come in? (Permission).", "It might rain (Possibility)."]
+                },
+                {
+                    title: "Must",
+                    def: "Necessity, Strong Obligation, Deduction.",
+                    examples: ["You must stop.", "He must be at home."]
+                },
+                {
+                    title: "Should / Ought to",
+                    def: "Advice, Duty.",
+                    examples: ["You should work hard.", "We ought to respect elders."]
+                }
+            ]
+        }
     }
 };
 
@@ -703,6 +1217,17 @@ const chapterMetadata = {
         unit10: { icon: "📏", title: "Unit 10", subtitle: "Tangents" },
         unit11: { icon: "✏️", title: "Unit 11", subtitle: "Pract. Geometry" },
         unit12: { icon: "📊", title: "Unit 12", subtitle: "Statistics" }
+    },
+    english: {
+        unit1: { icon: "🗣️", title: "Unit 1", subtitle: "Parts of Speech" },
+        unit2: { icon: "🔗", title: "Unit 2", subtitle: "Compound Prep." },
+        unit3: { icon: "⏳", title: "Unit 3", subtitle: "Tenses" },
+        unit4: { icon: "📝", title: "Unit 4", subtitle: "Phrases" },
+        unit5: { icon: "💡", title: "Unit 5", subtitle: "Connotation" },
+        unit6: { icon: "🎨", title: "Unit 6", subtitle: "Fig. of Speech" },
+        unit7: { icon: "💬", title: "Unit 7", subtitle: "Direct/Indirect" },
+        unit8: { icon: "🌉", title: "Unit 8", subtitle: "Transitions" },
+        unit9: { icon: "🛠️", title: "Unit 9", subtitle: "Modal Verbs" }
     }
 };
 
@@ -742,6 +1267,7 @@ let multiSubjectSettings = {
     type: '', // 'count', 'all', 'specific'
     count: 0
 };
+let isDefinitionsMode = false;
 let multiSubjectFilter = {}; // { physics: ['unit1', 'unit2'], ... }
 let modalCallback = null; // Callback for modal confirmation
 
@@ -752,6 +1278,8 @@ const menuScreen = document.getElementById('menu-screen');
 const modeScreen = document.getElementById('mode-screen');
 const chapterScreen = document.getElementById('chapter-screen');
 const mixedSetupScreen = document.getElementById('mixed-setup-screen');
+const practiceTypeScreen = document.getElementById('practice-type-screen');
+const definitionsScreen = document.getElementById('definitions-screen');
 const multiChapterScreen = document.getElementById('multi-chapter-screen');
 const timerScreen = document.getElementById('timer-screen');
 const quizScreen = document.getElementById('quiz-screen');
@@ -1012,6 +1540,12 @@ function selectSubject(mode) {
 
 function selectMode(mode) {
     selectedMode = mode;
+    
+    if (selectedSubjectMode === 'english' && selectedMode === 'practice') {
+        switchScreen(modeScreen, practiceTypeScreen);
+        return;
+    }
+
     renderChapterButtons();
     
     // Hide Mixed option in Practice mode
@@ -1024,6 +1558,16 @@ function selectMode(mode) {
     }
     
     switchScreen(modeScreen, chapterScreen);
+}
+
+function selectPracticeType(type) {
+    if (type === 'definitions') {
+        isDefinitionsMode = true;
+    } else {
+        isDefinitionsMode = false;
+    }
+    renderChapterButtons();
+    switchScreen(practiceTypeScreen, chapterScreen);
 }
 
 function renderChapterButtons() {
@@ -1056,6 +1600,12 @@ function renderChapterButtons() {
 function selectChapter(chapter) {
     selectedChapter = chapter;
     
+    if (isDefinitionsMode) {
+        renderDefinitions(chapter);
+        switchScreen(chapterScreen, definitionsScreen);
+        return;
+    }
+    
     if (selectedMode === 'test' && chapter === 'mixed') {
         // Calculate total questions
         let total = 0;
@@ -1068,6 +1618,46 @@ function selectChapter(chapter) {
         } else {
             switchScreen(chapterScreen, timerScreen);
         }
+    }
+}
+
+function renderDefinitions(chapter) {
+    const container = document.getElementById('definitions-container');
+    const title = document.getElementById('def-header-title');
+    const subtitle = document.getElementById('def-header-subtitle');
+    
+    container.innerHTML = '';
+    
+    const defData = definitionsDB[selectedSubjectMode] && definitionsDB[selectedSubjectMode][chapter];
+    
+    if (defData) {
+        title.textContent = defData.title;
+        subtitle.textContent = "Concepts & Examples";
+        
+        defData.content.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'def-card anim-fade-up';
+            
+            let html = `<div class="def-title">${item.title}</div>`;
+            if (item.def) html += `<div class="def-text">${item.def}</div>`;
+            
+            if (item.structure && Array.isArray(item.structure)) {
+                html += `<div class="structure-box">${item.structure.join('\n')}</div>`;
+            }
+            
+            if (item.helpers) html += `<div class="helper-note">💡 ${item.helpers}</div>`;
+            
+            if (item.examples && item.examples.length > 0) {
+                html += `<ul class="example-list">${item.examples.map(ex => `<li>${ex}</li>`).join('')}</ul>`;
+            }
+            
+            card.innerHTML = html;
+            container.appendChild(card);
+        });
+    } else {
+        title.textContent = "Definitions";
+        subtitle.textContent = "Coming Soon";
+        container.innerHTML = `<div class="def-card"><div class="def-text">Content for this chapter is being prepared.</div></div>`;
     }
 }
 
@@ -1123,9 +1713,9 @@ function renderMultiSubjectSelection() {
     grid.innerHTML = '';
     selectedMultiSubjects = [];
     
-    const subjects = ['physics', 'computer', 'chemistry', 'maths'];
-    const icons = { physics: '⚛️', computer: '💻', chemistry: '🧪', maths: '📐' };
-    const titles = { physics: 'Physics', computer: 'Computer', chemistry: 'Chemistry', maths: 'Maths' };
+    const subjects = ['physics', 'computer', 'chemistry', 'maths', 'english'];
+    const icons = { physics: '⚛️', computer: '💻', chemistry: '🧪', maths: '📐', english: '🔤' };
+    const titles = { physics: 'Physics', computer: 'Computer', chemistry: 'Chemistry', maths: 'Maths', english: 'English' };
     
     subjects.forEach(sub => {
         const btn = document.createElement('button');
@@ -1736,6 +2326,8 @@ function handleBack(currentScreen) {
         case 'menu': switchScreen(menuScreen, regScreen); break;
         case 'mode': switchScreen(modeScreen, menuScreen); break;
         case 'chapter': switchScreen(chapterScreen, modeScreen); break;
+        case 'practice-type': switchScreen(practiceTypeScreen, modeScreen); break;
+        case 'definitions': switchScreen(definitionsScreen, chapterScreen); break;
         case 'mixed-setup': switchScreen(mixedSetupScreen, chapterScreen); break;
         case 'multi-chapter': switchScreen(multiChapterScreen, mixedSetupScreen); break;
         case 'multi-sub-select': switchScreen(multiSubSelectScreen, menuScreen); break;

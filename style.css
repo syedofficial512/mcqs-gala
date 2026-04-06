@@ -721,3 +721,61 @@ button {
     color: var(--danger);
     border-color: var(--danger);
 }
+
+/* --- Definitions Screen Styles --- */
+.def-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.def-title {
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 5px;
+}
+.def-text {
+    color: var(--text-main);
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+.structure-box {
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--accent);
+    white-space: pre-wrap;
+}
+.example-list {
+    list-style: none;
+    padding-left: 0;
+}
+.example-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+.example-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+.helper-note {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-top: 5px;
+    background: rgba(255, 215, 0, 0.05);
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
